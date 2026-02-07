@@ -35,7 +35,7 @@ function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/70 via-dark/50 to-dark/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/80 via-primary-dark/50 to-primary/20" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
@@ -44,7 +44,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-accent text-sm tracking-widest uppercase mb-6"
+            className="text-accent-light text-sm tracking-widest uppercase mb-6"
           >
             Luxury Facial Sculpting in Charlotte, NC
           </motion.p>
@@ -57,7 +57,7 @@ function Hero() {
           >
             Where Science
             <br />
-            Meets <span className="italic text-accent">Beauty</span>
+            Meets <span className="italic text-accent-light">Beauty</span>
           </motion.h1>
 
           <motion.p
@@ -81,7 +81,7 @@ function Hero() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-accent-light transition-colors inline-flex items-center gap-2"
+              className="bg-primary text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-primary-light transition-colors inline-flex items-center gap-2"
             >
               Book Your Treatment
               <ArrowRight size={16} />
@@ -155,7 +155,7 @@ function Services() {
     <section className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-accent text-sm tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm tracking-widest uppercase mb-4">
             Our Treatments
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
@@ -173,7 +173,7 @@ function Services() {
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:shadow-xl transition-shadow duration-500 h-full flex flex-col">
+                className="group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:shadow-xl hover:border-primary-light transition-all duration-500 h-full flex flex-col">
                 {/* Image */}
                 <div className="relative h-72 overflow-hidden">
                   <Image
@@ -182,7 +182,7 @@ function Services() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 left-4 bg-dark/80 backdrop-blur-sm text-white text-xs px-4 py-1.5 rounded-full">
+                  <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-white text-xs px-4 py-1.5 rounded-full">
                     {service.badge}
                   </div>
                 </div>
@@ -194,7 +194,7 @@ function Services() {
                       <Star
                         key={j}
                         size={12}
-                        className="fill-accent text-accent"
+                        className="fill-primary text-primary"
                       />
                     ))}
                     <span className="text-gray-500 text-xs ml-1">5.0</span>
@@ -222,7 +222,7 @@ function Services() {
                     href="https://rozamassage.glossgenius.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full text-center bg-dark text-white py-3.5 rounded-full text-sm hover:bg-primary transition-colors block"
+                    className="w-full text-center bg-primary text-white py-3.5 rounded-full text-sm hover:bg-primary-dark transition-colors block"
                   >
                     Book Now
                   </a>
@@ -235,7 +235,7 @@ function Services() {
         <AnimatedSection className="text-center mt-14">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-dark text-sm font-medium border-b-2 border-dark pb-1 hover:text-primary hover:border-primary transition-colors"
+            className="inline-flex items-center gap-2 text-primary text-sm font-medium border-b-2 border-primary pb-1 hover:text-primary-dark hover:border-primary-dark transition-colors"
           >
             View All Services
             <ArrowRight size={16} />
@@ -270,7 +270,7 @@ function About() {
                     <Star
                       key={i}
                       size={14}
-                      className="fill-accent text-accent"
+                      className="fill-primary text-primary"
                     />
                   ))}
                 </div>
@@ -285,7 +285,7 @@ function About() {
           {/* Content */}
           <div>
             <AnimatedSection>
-              <p className="text-accent text-sm tracking-widest uppercase mb-4">
+              <p className="text-primary text-sm tracking-widest uppercase mb-4">
                 About Roza
               </p>
               <h2 className="font-display text-4xl md:text-5xl text-dark mb-6 leading-tight">
@@ -318,7 +318,7 @@ function About() {
                     key={item.text}
                     className="flex items-center gap-3 text-sm text-gray-700"
                   >
-                    <item.icon size={18} className="text-accent shrink-0" />
+                    <item.icon size={18} className="text-primary shrink-0" />
                     {item.text}
                   </div>
                 ))}
@@ -326,7 +326,7 @@ function About() {
 
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 bg-dark text-white px-7 py-3.5 rounded-full text-sm hover:bg-primary transition-colors"
+                className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-full text-sm hover:bg-primary-dark transition-colors"
               >
                 Learn More
                 <ArrowRight size={16} />
@@ -354,7 +354,7 @@ function VideoShowcase() {
     <section className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-accent text-sm tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm tracking-widest uppercase mb-4">
             See It in Action
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
@@ -369,7 +369,7 @@ function VideoShowcase() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {videos.map((video, i) => (
             <AnimatedSection key={video.id} delay={i * 0.08}>
-              <div className="relative rounded-2xl overflow-hidden bg-gray-100 aspect-[9/16]">
+              <div className="relative rounded-2xl overflow-hidden bg-cream aspect-[9/16]">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.id}`}
                   title={video.title}
@@ -416,10 +416,10 @@ function WhyChoose() {
   ];
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-white">
+    <section className="py-24 md:py-32 px-6 bg-cream">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-accent text-sm tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm tracking-widest uppercase mb-4">
             Why Choose Us
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
@@ -436,9 +436,9 @@ function WhyChoose() {
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                className="text-center p-8 rounded-2xl bg-cream hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                  <r.icon size={24} className="text-accent" />
+                className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300 h-full">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                  <r.icon size={24} className="text-primary" />
                 </div>
                 <h3 className="font-display text-xl text-dark mb-3">
                   {r.title}
@@ -465,11 +465,11 @@ function GalleryPreview() {
   ];
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-cream">
+    <section className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
           <div>
-            <p className="text-accent text-sm tracking-widest uppercase mb-4">
+            <p className="text-primary text-sm tracking-widest uppercase mb-4">
               Our Work
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-dark">
@@ -478,7 +478,7 @@ function GalleryPreview() {
           </div>
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 text-dark text-sm font-medium border-b-2 border-dark pb-1 hover:text-primary hover:border-primary transition-colors"
+            className="inline-flex items-center gap-2 text-primary text-sm font-medium border-b-2 border-primary pb-1 hover:text-primary-dark hover:border-primary-dark transition-colors"
           >
             View Full Gallery
             <ArrowRight size={16} />
@@ -495,7 +495,7 @@ function GalleryPreview() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/30 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-primary-dark/0 group-hover:bg-primary-dark/30 transition-colors duration-300" />
               </div>
             </AnimatedSection>
           ))}
@@ -521,13 +521,13 @@ function TestimonialsSection() {
   }, [next]);
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-dark text-white">
+    <section className="py-24 md:py-32 px-6 bg-cream">
       <div className="max-w-4xl mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-accent text-sm tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm tracking-widest uppercase mb-4">
             Testimonials
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-white">
+          <h2 className="font-display text-4xl md:text-5xl text-dark">
             What Our Clients Say
           </h2>
         </AnimatedSection>
@@ -547,17 +547,17 @@ function TestimonialsSection() {
                   <Star
                     key={i}
                     size={18}
-                    className="fill-accent text-accent"
+                    className="fill-primary text-primary"
                   />
                 ))}
               </div>
-              <p className="font-display text-2xl md:text-3xl text-white/90 leading-relaxed mb-8 italic">
+              <p className="font-display text-2xl md:text-3xl text-dark/90 leading-relaxed mb-8 italic">
                 &ldquo;{testimonials[current].text}&rdquo;
               </p>
-              <p className="text-white font-medium text-sm">
+              <p className="text-dark font-medium text-sm">
                 {testimonials[current].name}
               </p>
-              <p className="text-white/40 text-sm mt-1">
+              <p className="text-gray-500 text-sm mt-1">
                 {testimonials[current].treatment}
               </p>
             </motion.div>
@@ -566,7 +566,7 @@ function TestimonialsSection() {
           <div className="flex items-center justify-center gap-4 mt-10">
             <button
               onClick={prev}
-              className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-accent hover:border-accent transition-colors"
+              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors"
             >
               <ChevronLeft size={20} />
             </button>
@@ -576,14 +576,14 @@ function TestimonialsSection() {
                   key={i}
                   onClick={() => setCurrent(i)}
                   className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    i === current ? "bg-accent w-8" : "bg-white/20"
+                    i === current ? "bg-primary w-8" : "bg-primary/20"
                   }`}
                 />
               ))}
             </div>
             <button
               onClick={next}
-              className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-accent hover:border-accent transition-colors"
+              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors"
             >
               <ChevronRight size={20} />
             </button>
@@ -605,7 +605,7 @@ function CTABanner() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/80" />
       </div>
       <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
         <AnimatedSection>
@@ -623,7 +623,7 @@ function CTABanner() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors inline-flex items-center gap-2"
+              className="bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors inline-flex items-center gap-2"
             >
               Book Appointment
               <ArrowRight size={16} />
@@ -650,7 +650,7 @@ function FAQSection() {
     <section className="py-24 md:py-32 px-6 bg-white">
       <div className="max-w-3xl mx-auto">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-accent text-sm tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm tracking-widest uppercase mb-4">
             FAQ
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
@@ -661,7 +661,7 @@ function FAQSection() {
         <div className="flex flex-col gap-3">
           {faqs.map((faq, i) => (
             <AnimatedSection key={i} delay={i * 0.05}>
-              <div className="border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 transition-colors">
+              <div className="border border-gray-100 rounded-xl overflow-hidden hover:border-primary-light transition-colors">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
                   className="w-full flex items-center justify-between p-6 text-left"
@@ -672,7 +672,7 @@ function FAQSection() {
                   <span
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
                       open === i
-                        ? "bg-accent text-white"
+                        ? "bg-primary text-white"
                         : "bg-gray-100 text-gray-500"
                     }`}
                   >
@@ -710,7 +710,7 @@ function Location() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <AnimatedSection>
-            <p className="text-accent text-sm tracking-widest uppercase mb-4">
+            <p className="text-primary text-sm tracking-widest uppercase mb-4">
               Visit Us
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-dark mb-6">
@@ -718,21 +718,21 @@ function Location() {
             </h2>
             <div className="flex flex-col gap-5 mb-8">
               <div className="flex items-start gap-4">
-                <MapPin size={20} className="text-accent mt-1 shrink-0" />
+                <MapPin size={20} className="text-primary mt-1 shrink-0" />
                 <div>
                   <p className="text-dark font-medium">10614 Providence Rd, Room #10</p>
                   <p className="text-gray-500 text-sm">Charlotte, NC 28277</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Phone size={20} className="text-accent mt-1 shrink-0" />
+                <Phone size={20} className="text-primary mt-1 shrink-0" />
                 <div>
                   <p className="text-dark font-medium">(704) 949-9962</p>
                   <p className="text-gray-500 text-sm">Call or text anytime</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Clock size={20} className="text-accent mt-1 shrink-0" />
+                <Clock size={20} className="text-primary mt-1 shrink-0" />
                 <div>
                   <p className="text-dark font-medium">Mon–Fri 9AM–5:30PM</p>
                   <p className="text-gray-500 text-sm">Saturday 8AM–1PM</p>
@@ -743,7 +743,7 @@ function Location() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-dark text-white px-8 py-4 rounded-full text-sm hover:bg-primary transition-colors"
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-sm hover:bg-primary-dark transition-colors"
             >
               Book Your Visit
               <ArrowRight size={16} />

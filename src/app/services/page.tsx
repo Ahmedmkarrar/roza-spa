@@ -26,13 +26,13 @@ export default function ServicesPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-dark/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/70 to-primary-dark/40" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-accent text-sm tracking-widest uppercase mb-4"
+            className="text-primary-light text-sm tracking-widest uppercase mb-4"
           >
             Our Treatments
           </motion.p>
@@ -65,8 +65,8 @@ export default function ServicesPage() {
               onClick={() => setActiveCategory(cat)}
               className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm transition-all ${
                 activeCategory === cat
-                  ? "bg-dark text-white"
-                  : "text-gray-500 hover:bg-gray-100"
+                  ? "bg-primary text-white"
+                  : "text-gray-500 hover:bg-cream"
               }`}
             >
               {cat}
@@ -89,15 +89,15 @@ export default function ServicesPage() {
             >
               {filtered.map((service, i) => (
                 <AnimatedSection key={service.id} delay={i * 0.05}>
-                  <div className="rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden h-full flex flex-col bg-white">
+                  <div className="rounded-2xl border border-gray-100 hover:shadow-lg hover:border-primary-light transition-all duration-300 overflow-hidden h-full flex flex-col bg-white">
                     {service.badge && (
-                      <div className="bg-accent text-white text-center py-2 text-xs tracking-widest uppercase font-medium">
+                      <div className="bg-primary text-white text-center py-2 text-xs tracking-widest uppercase font-medium">
                         {service.badge}
                       </div>
                     )}
 
                     <div className="p-7 flex-1 flex flex-col">
-                      <p className="text-accent text-xs tracking-widest uppercase mb-3">
+                      <p className="text-primary text-xs tracking-widest uppercase mb-3">
                         {service.category}
                       </p>
                       <h3 className="font-display text-2xl text-dark mb-3">
@@ -105,7 +105,7 @@ export default function ServicesPage() {
                       </h3>
 
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="text-dark font-semibold text-xl">
+                        <span className="text-primary font-semibold text-xl">
                           {service.price}
                         </span>
                         <span className="text-gray-500 text-sm flex items-center gap-1">
@@ -118,7 +118,7 @@ export default function ServicesPage() {
                           <Star
                             key={j}
                             size={11}
-                            className="fill-accent text-accent"
+                            className="fill-primary text-primary"
                           />
                         ))}
                       </div>
@@ -134,7 +134,7 @@ export default function ServicesPage() {
                             key={b}
                             className="inline-flex items-center gap-1 px-3 py-1 bg-cream text-gray-700 text-xs rounded-full"
                           >
-                            <Check size={10} className="text-accent" /> {b}
+                            <Check size={10} className="text-primary" /> {b}
                           </span>
                         ))}
                       </div>
@@ -143,7 +143,7 @@ export default function ServicesPage() {
                         href="https://rozamassage.glossgenius.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full text-center bg-dark text-white py-3.5 rounded-full text-sm hover:bg-primary transition-colors mt-auto"
+                        className="w-full text-center bg-primary text-white py-3.5 rounded-full text-sm hover:bg-primary-dark transition-colors mt-auto"
                       >
                         Book Now
                       </a>
@@ -160,7 +160,7 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 px-6 bg-cream">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection className="text-center mb-12">
-            <p className="text-accent text-sm tracking-widest uppercase mb-4">
+            <p className="text-primary text-sm tracking-widest uppercase mb-4">
               Enhance Your Visit
             </p>
             <h2 className="font-display text-3xl md:text-4xl text-dark">
@@ -187,25 +187,28 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-dark text-center">
-        <AnimatedSection>
-          <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-white/60 mb-10 max-w-md mx-auto">
-            Not sure which treatment is right for you? Book a consultation and
-            Roza will create a personalized plan.
-          </p>
-          <a
-            href="https://rozamassage.glossgenius.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-accent-light transition-colors"
-          >
-            Book Appointment
-            <ArrowRight size={16} />
-          </a>
-        </AnimatedSection>
+      <section className="relative py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary" />
+        <div className="relative z-10 text-center">
+          <AnimatedSection>
+            <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
+              Ready to Get Started?
+            </h2>
+            <p className="text-white/70 mb-10 max-w-md mx-auto">
+              Not sure which treatment is right for you? Book a consultation and
+              Roza will create a personalized plan.
+            </p>
+            <a
+              href="https://rozamassage.glossgenius.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors"
+            >
+              Book Appointment
+              <ArrowRight size={16} />
+            </a>
+          </AnimatedSection>
+        </div>
       </section>
     </main>
   );

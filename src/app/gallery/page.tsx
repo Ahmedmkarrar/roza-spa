@@ -109,13 +109,13 @@ export default function GalleryPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-dark/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/70 to-primary-dark/40" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-accent text-sm tracking-widest uppercase mb-4"
+            className="text-primary-light text-sm tracking-widest uppercase mb-4"
           >
             Our Portfolio
           </motion.p>
@@ -148,8 +148,8 @@ export default function GalleryPage() {
               onClick={() => setFilter(cat)}
               className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm transition-all ${
                 filter === cat
-                  ? "bg-dark text-white"
-                  : "text-gray-500 hover:bg-gray-100"
+                  ? "bg-primary text-white"
+                  : "text-gray-500 hover:bg-cream"
               }`}
             >
               {cat}
@@ -181,9 +181,9 @@ export default function GalleryPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-accent text-xs tracking-widest uppercase mb-1">
+                      <p className="text-primary-light text-xs tracking-widest uppercase mb-1">
                         {item.category}
                       </p>
                       <p className="text-white font-display text-xl">
@@ -230,7 +230,7 @@ export default function GalleryPage() {
                 />
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/90 to-transparent p-8">
-                <p className="text-accent text-xs tracking-widest uppercase mb-1">
+                <p className="text-primary-light text-xs tracking-widest uppercase mb-1">
                   {selected.category}
                 </p>
                 <p className="text-white font-display text-3xl mb-4">
@@ -240,7 +240,7 @@ export default function GalleryPage() {
                   href="https://rozamassage.glossgenius.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-full text-sm hover:bg-accent-light transition-colors"
+                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm hover:bg-primary-light transition-colors"
                 >
                   Book This Treatment
                   <ArrowRight size={14} />
@@ -252,25 +252,28 @@ export default function GalleryPage() {
       </AnimatePresence>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-dark text-center">
-        <AnimatedSection>
-          <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
-            Your Transformation Awaits
-          </h2>
-          <p className="text-white/60 mb-10 max-w-md mx-auto">
-            Join hundreds of clients who have experienced the power of expert
-            facial sculpting.
-          </p>
-          <a
-            href="https://rozamassage.glossgenius.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-accent-light transition-colors"
-          >
-            Book Now
-            <ArrowRight size={16} />
-          </a>
-        </AnimatedSection>
+      <section className="relative py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary" />
+        <div className="relative z-10 text-center">
+          <AnimatedSection>
+            <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
+              Your Transformation Awaits
+            </h2>
+            <p className="text-white/70 mb-10 max-w-md mx-auto">
+              Join 500+ clients who have experienced the power of expert
+              facial sculpting.
+            </p>
+            <a
+              href="https://rozamassage.glossgenius.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors"
+            >
+              Book Now
+              <ArrowRight size={16} />
+            </a>
+          </AnimatedSection>
+        </div>
       </section>
     </main>
   );

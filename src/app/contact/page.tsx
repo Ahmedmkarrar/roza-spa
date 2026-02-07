@@ -40,13 +40,13 @@ export default function ContactPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-dark/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/70 to-primary-dark/40" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-accent text-sm tracking-widest uppercase mb-4"
+            className="text-primary-light text-sm tracking-widest uppercase mb-4"
           >
             Get in Touch
           </motion.p>
@@ -76,7 +76,7 @@ export default function ContactPage() {
             {/* Contact info */}
             <div>
               <AnimatedSection>
-                <p className="text-accent text-sm tracking-widest uppercase mb-4">
+                <p className="text-primary text-sm tracking-widest uppercase mb-4">
                   Visit Our Studio
                 </p>
                 <h2 className="font-display text-4xl text-dark mb-8">
@@ -122,11 +122,11 @@ export default function ContactPage() {
                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="flex items-start gap-4 p-5 bg-cream rounded-xl hover:shadow-md transition-all group"
                       >
-                        <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent group-hover:text-white transition-all">
-                          <item.icon size={20} className="text-accent group-hover:text-white" />
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
+                          <item.icon size={20} className="text-primary group-hover:text-white" />
                         </div>
                         <div>
-                          <p className="text-xs text-accent tracking-widest uppercase mb-1">
+                          <p className="text-xs text-primary tracking-widest uppercase mb-1">
                             {item.label}
                           </p>
                           <p className="text-dark font-medium">{item.primary}</p>
@@ -135,11 +135,11 @@ export default function ContactPage() {
                       </a>
                     ) : (
                       <div className="flex items-start gap-4 p-5 bg-cream rounded-xl">
-                        <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                          <item.icon size={20} className="text-accent" />
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                          <item.icon size={20} className="text-primary" />
                         </div>
                         <div>
-                          <p className="text-xs text-accent tracking-widest uppercase mb-1">
+                          <p className="text-xs text-primary tracking-widest uppercase mb-1">
                             {item.label}
                           </p>
                           <p className="text-dark font-medium">{item.primary}</p>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                   href="https://rozamassage.glossgenius.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-dark text-white px-8 py-4 rounded-full text-sm hover:bg-primary transition-colors w-full justify-center sm:w-auto"
+                  className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-sm hover:bg-primary-dark transition-colors w-full justify-center sm:w-auto"
                 >
                   Book Online Instantly
                   <ArrowRight size={16} />
@@ -166,7 +166,7 @@ export default function ContactPage() {
 
             {/* Form */}
             <AnimatedSection delay={0.2}>
-              <div className="bg-cream rounded-2xl p-8 md:p-10">
+              <div className="bg-cream rounded-2xl p-8 md:p-10 border border-primary/10">
                 <h3 className="font-display text-2xl text-dark mb-2">
                   Send a Message
                 </h3>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                     animate={{ scale: 1, opacity: 1 }}
                     className="text-center py-16"
                   >
-                    <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
+                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
                       <Check className="text-white" size={28} />
                     </div>
                     <h3 className="font-display text-2xl text-dark mb-2">
@@ -203,7 +203,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                         placeholder="Your name"
                       />
                     </div>
@@ -220,7 +220,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
                           }
-                          className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                          className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                           placeholder="you@email.com"
                         />
                       </div>
@@ -234,7 +234,7 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
                           }
-                          className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                          className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                           placeholder="(xxx) xxx-xxxx"
                         />
                       </div>
@@ -249,11 +249,13 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, service: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors"
+                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                       >
                         <option value="">Select a treatment...</option>
                         <option>TMJ Sculpt</option>
                         <option>Facial + Buccal Massage</option>
+                        <option>Facial Massage</option>
+                        <option>Head Massage</option>
                         <option>Facial + Mask + Hands</option>
                         <option>Facial Rejuvenation</option>
                         <option>Body Contouring</option>
@@ -275,14 +277,14 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, message: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none"
+                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
                         placeholder="Tell us about your goals..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full bg-dark text-white py-4 rounded-full text-sm font-medium hover:bg-primary transition-colors flex items-center justify-center gap-2"
+                      className="w-full bg-primary text-white py-4 rounded-full text-sm font-medium hover:bg-primary-dark transition-colors flex items-center justify-center gap-2"
                     >
                       Send Message
                       <Send size={14} />
@@ -303,9 +305,9 @@ export default function ContactPage() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-dark/40 flex items-center justify-center">
+        <div className="absolute inset-0 bg-primary-dark/50 flex items-center justify-center">
           <div className="text-center text-white">
-            <MapPin className="w-10 h-10 mx-auto mb-4 text-accent" />
+            <MapPin className="w-10 h-10 mx-auto mb-4 text-primary-light" />
             <p className="font-display text-2xl mb-2">
               10614 Providence Rd, Room #10
             </p>
@@ -314,7 +316,7 @@ export default function ContactPage() {
               href="https://maps.google.com/?q=10614+Providence+Rd+Room+10+Charlotte+NC+28277"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-dark px-6 py-3 rounded-full text-sm hover:bg-accent hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-6 py-3 rounded-full text-sm hover:bg-cream transition-colors"
             >
               Open in Google Maps
               <ArrowRight size={14} />

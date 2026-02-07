@@ -171,10 +171,10 @@ export default function QuizPage() {
     return (
       <main className="min-h-screen flex items-center justify-center bg-cream px-6 pt-24">
         <AnimatedSection className="max-w-xl text-center">
-          <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-8">
-            <Sparkles className="w-8 h-8 text-accent" />
+          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
+            <Sparkles className="w-8 h-8 text-primary" />
           </div>
-          <p className="text-accent text-sm tracking-widest uppercase mb-4">
+          <p className="text-primary text-sm tracking-widest uppercase mb-4">
             Personalized Recommendations
           </p>
           <h1 className="font-display text-5xl md:text-6xl text-dark mb-6">
@@ -189,7 +189,7 @@ export default function QuizPage() {
           </p>
           <button
             onClick={() => setStarted(true)}
-            className="inline-flex items-center gap-2 bg-dark text-white px-10 py-4 rounded-full text-sm font-medium hover:bg-primary transition-colors"
+            className="inline-flex items-center gap-2 bg-primary text-white px-10 py-4 rounded-full text-sm font-medium hover:bg-primary-dark transition-colors"
           >
             Start Quiz
             <ArrowRight size={16} />
@@ -205,10 +205,10 @@ export default function QuizPage() {
       <main className="min-h-screen bg-white pt-32 pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-14">
-            <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
+            <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
               <Check className="w-7 h-7 text-white" />
             </div>
-            <p className="text-accent text-sm tracking-widest uppercase mb-4">
+            <p className="text-primary text-sm tracking-widest uppercase mb-4">
               Your Results
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
@@ -224,11 +224,11 @@ export default function QuizPage() {
               <AnimatedSection key={rec.name} delay={i * 0.1}>
                 <div
                   className={`rounded-2xl overflow-hidden h-full flex flex-col bg-white border ${
-                    i === 0 ? "border-accent shadow-lg" : "border-gray-100"
+                    i === 0 ? "border-primary shadow-lg" : "border-gray-100"
                   }`}
                 >
                   {i === 0 && (
-                    <div className="bg-accent text-white text-center py-2 text-xs tracking-widest uppercase font-medium flex items-center justify-center gap-1">
+                    <div className="bg-primary text-white text-center py-2 text-xs tracking-widest uppercase font-medium flex items-center justify-center gap-1">
                       <Star size={10} className="fill-white" /> Best Match
                     </div>
                   )}
@@ -240,7 +240,7 @@ export default function QuizPage() {
                       {rec.name}
                     </h3>
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="text-dark font-semibold text-lg">
+                      <span className="text-primary font-semibold text-lg">
                         {rec.price}
                       </span>
                       <span className="text-gray-500 text-sm flex items-center gap-1">
@@ -256,8 +256,8 @@ export default function QuizPage() {
                       rel="noopener noreferrer"
                       className={`w-full text-center py-3.5 rounded-full text-sm transition-colors ${
                         i === 0
-                          ? "bg-accent text-white hover:bg-accent-light"
-                          : "bg-dark text-white hover:bg-primary"
+                          ? "bg-primary text-white hover:bg-primary-dark"
+                          : "bg-primary text-white hover:bg-primary-dark"
                       }`}
                     >
                       Book Now
@@ -275,7 +275,7 @@ export default function QuizPage() {
                 setStep(0);
                 setAnswers([]);
               }}
-              className="text-gray-500 text-sm hover:text-dark transition-colors"
+              className="text-gray-500 text-sm hover:text-primary transition-colors"
             >
               Retake Quiz
             </button>
@@ -294,7 +294,7 @@ export default function QuizPage() {
       {/* Progress */}
       <div className="w-full h-1 bg-gray-100">
         <motion.div
-          className="h-full bg-accent"
+          className="h-full bg-primary"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.3 }}
@@ -303,7 +303,7 @@ export default function QuizPage() {
 
       <div className="flex-1 flex items-center justify-center px-6 py-16">
         <div className="max-w-xl w-full">
-          <p className="text-accent text-xs tracking-widest uppercase text-center mb-8">
+          <p className="text-primary text-xs tracking-widest uppercase text-center mb-8">
             Question {step + 1} of {steps.length}
           </p>
 
@@ -331,8 +331,8 @@ export default function QuizPage() {
                     onClick={() => handleAnswer(opt.value)}
                     className={`p-5 text-left rounded-xl border-2 transition-all text-sm ${
                       answers[step] === opt.value
-                        ? "border-accent bg-accent/5"
-                        : "border-gray-100 hover:border-gray-300 bg-white"
+                        ? "border-primary bg-primary/5"
+                        : "border-gray-100 hover:border-primary-light bg-white"
                     }`}
                   >
                     {opt.label}
@@ -345,7 +345,7 @@ export default function QuizPage() {
           {step > 0 && (
             <button
               onClick={() => setStep(step - 1)}
-              className="mt-8 mx-auto flex items-center gap-2 text-gray-500 text-sm hover:text-dark transition-colors"
+              className="mt-8 mx-auto flex items-center gap-2 text-gray-500 text-sm hover:text-primary transition-colors"
             >
               <ArrowLeft size={14} />
               Back

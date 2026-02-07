@@ -17,13 +17,13 @@ export default function AboutPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-dark/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/70 to-primary-dark/40" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-accent text-sm tracking-widest uppercase mb-4"
+            className="text-primary-light text-sm tracking-widest uppercase mb-4"
           >
             Our Story
           </motion.p>
@@ -55,7 +55,7 @@ export default function AboutPage() {
 
             <div>
               <AnimatedSection>
-                <p className="text-accent text-sm tracking-widest uppercase mb-4">
+                <p className="text-primary text-sm tracking-widest uppercase mb-4">
                   About Roza
                 </p>
                 <h2 className="font-display text-4xl md:text-5xl text-dark mb-6 leading-tight">
@@ -99,7 +99,7 @@ export default function AboutPage() {
                       key={item.text}
                       className="flex items-center gap-3 p-3 bg-cream rounded-xl text-sm text-gray-700"
                     >
-                      <item.icon size={18} className="text-accent shrink-0" />
+                      <item.icon size={18} className="text-primary shrink-0" />
                       {item.text}
                     </div>
                   ))}
@@ -118,7 +118,7 @@ export default function AboutPage() {
               &ldquo;Every face is a canvas. I don&apos;t change who you are — I
               reveal the beauty that&apos;s already there.&rdquo;
             </p>
-            <p className="text-accent text-sm tracking-widest uppercase">
+            <p className="text-primary text-sm tracking-widest uppercase">
               — Roza Baidavletova
             </p>
           </AnimatedSection>
@@ -129,7 +129,7 @@ export default function AboutPage() {
       <section className="py-24 md:py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <AnimatedSection className="text-center mb-16">
-            <p className="text-accent text-sm tracking-widest uppercase mb-4">
+            <p className="text-primary text-sm tracking-widest uppercase mb-4">
               Our Approach
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-dark">
@@ -187,25 +187,28 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-dark text-center">
-        <AnimatedSection>
-          <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
-            Experience the Difference
-          </h2>
-          <p className="text-white/60 mb-10 max-w-md mx-auto">
-            Book your first appointment and see why 500+ clients trust
-            Roza with their skin.
-          </p>
-          <a
-            href="https://rozamassage.glossgenius.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-accent-light transition-colors"
-          >
-            Book Your Treatment
-            <ArrowRight size={16} />
-          </a>
-        </AnimatedSection>
+      <section className="relative py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary" />
+        <div className="relative z-10 text-center">
+          <AnimatedSection>
+            <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
+              Experience the Difference
+            </h2>
+            <p className="text-white/70 mb-10 max-w-md mx-auto">
+              Book your first appointment and see why 500+ clients trust
+              Roza with their skin.
+            </p>
+            <a
+              href="https://rozamassage.glossgenius.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors"
+            >
+              Book Your Treatment
+              <ArrowRight size={16} />
+            </a>
+          </AnimatedSection>
+        </div>
       </section>
     </main>
   );

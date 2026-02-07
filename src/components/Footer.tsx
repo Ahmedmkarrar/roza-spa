@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-display text-3xl font-medium mb-4">
-              Roza<span className="text-accent">.</span>
+              Roza<span className="text-primary">.</span>
             </h3>
             <p className="text-white/50 text-sm leading-relaxed mb-6">
               Charlotte&apos;s premier destination for luxury facial sculpting
@@ -21,7 +21,7 @@ export default function Footer() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-accent text-white text-sm px-6 py-3 rounded-full hover:bg-accent-light transition-colors"
+              className="inline-block bg-primary text-white text-sm px-6 py-3 rounded-full hover:bg-primary-light transition-colors"
             >
               Book Appointment
             </a>
@@ -43,7 +43,7 @@ export default function Footer() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="text-white/60 hover:text-accent transition-colors text-sm"
+                  className="text-white/60 hover:text-primary-light transition-colors text-sm"
                 >
                   {l.label}
                 </Link>
@@ -61,7 +61,7 @@ export default function Footer() {
                 href="https://maps.google.com/?q=10614+Providence+Rd+Room+10+Charlotte+NC+28277"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-white/60 hover:text-accent transition-colors"
+                className="flex items-start gap-3 text-white/60 hover:text-primary-light transition-colors"
               >
                 <MapPin size={16} className="mt-1 shrink-0" />
                 <span>
@@ -72,14 +72,14 @@ export default function Footer() {
               </a>
               <a
                 href="tel:7049499962"
-                className="flex items-center gap-3 text-white/60 hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-primary-light transition-colors"
               >
                 <Phone size={16} className="shrink-0" />
                 (704) 949-9962
               </a>
               <a
                 href="mailto:rozab0909@gmail.com"
-                className="flex items-center gap-3 text-white/60 hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-primary-light transition-colors"
               >
                 <Mail size={16} className="shrink-0" />
                 rozab0909@gmail.com
@@ -94,14 +94,14 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-3 text-sm">
               <div className="flex items-start gap-3">
-                <Clock size={16} className="mt-0.5 shrink-0 text-accent" />
+                <Clock size={16} className="mt-0.5 shrink-0 text-primary-light" />
                 <div>
                   <p className="text-white/80">Mon – Fri</p>
                   <p className="text-white/50">9:00 AM – 5:30 PM</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Clock size={16} className="mt-0.5 shrink-0 text-accent" />
+                <Clock size={16} className="mt-0.5 shrink-0 text-primary-light" />
                 <div>
                   <p className="text-white/80">Saturday</p>
                   <p className="text-white/50">8:00 AM – 1:00 PM</p>

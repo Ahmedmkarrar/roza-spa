@@ -47,7 +47,7 @@ export default function Navbar() {
               isTransparent ? "text-white" : "text-dark"
             }`}
           >
-            Roza<span className="text-accent">.</span>
+            Roza<span className="text-primary">.</span>
           </h1>
         </Link>
 
@@ -61,7 +61,7 @@ export default function Navbar() {
                 pathname === link.href
                   ? isTransparent
                     ? "text-white font-medium"
-                    : "text-dark font-medium"
+                    : "text-primary font-medium"
                   : isTransparent
                     ? "text-white/70 hover:text-white"
                     : "text-gray-500 hover:text-dark"
@@ -76,8 +76,8 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className={`text-sm px-7 py-3 rounded-full transition-all duration-300 ${
               isTransparent
-                ? "bg-white/15 backdrop-blur-sm text-white border border-white/25 hover:bg-white hover:text-dark"
-                : "bg-dark text-white hover:bg-primary"
+                ? "bg-white/15 backdrop-blur-sm text-white border border-white/25 hover:bg-white hover:text-primary-dark"
+                : "bg-primary text-white hover:bg-primary-dark"
             }`}
           >
             Book Now
@@ -117,7 +117,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-3xl font-display transition-colors ${
                     pathname === link.href
-                      ? "text-dark"
+                      ? "text-primary"
                       : "text-gray-300 hover:text-dark"
                   }`}
                 >
@@ -132,7 +132,7 @@ export default function Navbar() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-dark text-white text-sm px-10 py-4 rounded-full mt-4 hover:bg-primary transition-colors"
+              className="bg-primary text-white text-sm px-10 py-4 rounded-full mt-4 hover:bg-primary-dark transition-colors"
             >
               Book Now
             </motion.a>
