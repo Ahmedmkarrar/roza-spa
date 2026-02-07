@@ -166,7 +166,7 @@ export default function ContactPage() {
 
             {/* Form */}
             <AnimatedSection delay={0.2}>
-              <div className="bg-cream rounded-2xl p-8 md:p-10 border border-primary/10">
+              <div className="bg-cream rounded-[20px] p-8 md:p-10 border border-primary/10">
                 <h3 className="font-display text-2xl text-dark mb-2">
                   Send a Message
                 </h3>

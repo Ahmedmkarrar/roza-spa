@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme inline {
@@ -41,8 +41,51 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-primary);
   color: white;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #e8b5c5 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-pink {
+  background: linear-gradient(135deg, #c4788b 0%, #d4899e 50%, #e8b5c5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pink gradient background */
+.bg-gradient-pink {
+  background: linear-gradient(135deg, #8e4e62 0%, #c4788b 50%, #d4899e 100%);
+}
+
+/* Floating orb animations */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(20px, 10px) scale(1.02); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(196, 120, 139, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(196, 120, 139, 0.7); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes scroll-dot {
+  0% { top: 6px; opacity: 1; }
+  100% { top: 18px; opacity: 0; }
 }
 
 /* Hide scrollbar on filter bars */
@@ -57,4 +100,10 @@ body {
 /* Smooth image loading */
 img {
   transition: opacity 0.3s ease;
+}
+
+/* Dot pattern overlay */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
 }

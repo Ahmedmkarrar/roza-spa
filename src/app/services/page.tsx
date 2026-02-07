@@ -89,7 +89,7 @@ export default function ServicesPage() {
             >
               {filtered.map((service, i) => (
                 <AnimatedSection key={service.id} delay={i * 0.05}>
-                  <div className="rounded-2xl border border-gray-100 hover:shadow-lg hover:border-primary-light transition-all duration-300 overflow-hidden h-full flex flex-col bg-white">
+                  <div className="rounded-[20px] border border-gray-100 hover:shadow-lg hover:border-primary-light transition-all duration-300 overflow-hidden h-full flex flex-col bg-white">
                     {service.badge && (
                       <div className="bg-primary text-white text-center py-2 text-xs tracking-widest uppercase font-medium">
                         {service.badge}
@@ -188,7 +188,8 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary" />
+        <div className="absolute inset-0 bg-gradient-pink" />
+        <div className="absolute inset-0 dot-pattern" />
         <div className="relative z-10 text-center">
           <AnimatedSection>
             <h2 className="font-display text-4xl md:text-5xl text-white mb-6">

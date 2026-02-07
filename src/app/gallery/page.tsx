@@ -173,7 +173,7 @@ export default function GalleryPage() {
                 <AnimatedSection key={item.id} delay={i * 0.05}>
                   <div
                     onClick={() => setSelected(item)}
-                    className="group cursor-pointer rounded-2xl overflow-hidden relative aspect-[4/5]"
+                    className="group cursor-pointer rounded-[20px] overflow-hidden relative aspect-[4/5]"
                   >
                     <Image
                       src={item.image}
@@ -213,7 +213,7 @@ export default function GalleryPage() {
               animate={{ scale: 1 }}
               exit={{ scale: 0.9 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative rounded-2xl overflow-hidden max-w-3xl w-full max-h-[80vh]"
+              className="relative rounded-[20px] overflow-hidden max-w-3xl w-full max-h-[80vh]"
             >
               <button
                 onClick={() => setSelected(null)}
@@ -253,7 +253,8 @@ export default function GalleryPage() {
 
       {/* CTA */}
       <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary" />
+        <div className="absolute inset-0 bg-gradient-pink" />
+        <div className="absolute inset-0 dot-pattern" />
         <div className="relative z-10 text-center">
           <AnimatedSection>
             <h2 className="font-display text-4xl md:text-5xl text-white mb-6">

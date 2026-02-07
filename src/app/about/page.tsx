@@ -17,7 +17,7 @@ export default function AboutPage() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/70 to-primary-dark/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/80 to-primary-dark/50" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
           <motion.p
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+              <div className="relative rounded-[20px] overflow-hidden aspect-[4/5]">
                 <Image
                   src="https://images.unsplash.com/photo-1560750588-73b555deaddd?w=800&q=80"
                   alt="Roza - Licensed Cosmetologist"
@@ -97,9 +97,11 @@ export default function AboutPage() {
                   ].map((item) => (
                     <div
                       key={item.text}
-                      className="flex items-center gap-3 p-3 bg-cream rounded-xl text-sm text-gray-700"
+                      className="flex items-center gap-3 p-3 bg-cream rounded-[12px] text-sm text-gray-700"
                     >
-                      <item.icon size={18} className="text-primary shrink-0" />
+                      <div className="w-9 h-9 rounded-[10px] bg-gradient-pink flex items-center justify-center shrink-0">
+                        <item.icon size={16} className="text-white" />
+                      </div>
                       {item.text}
                     </div>
                   ))}
@@ -162,7 +164,7 @@ export default function AboutPage() {
               },
             ].map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 0.1}>
-                <div className="rounded-2xl overflow-hidden bg-cream h-full">
+                <div className="rounded-[20px] overflow-hidden bg-cream h-full">
                   <div className="relative h-56">
                     <Image
                       src={v.image}
@@ -188,7 +190,8 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="relative py-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary" />
+        <div className="absolute inset-0 bg-gradient-pink" />
+        <div className="absolute inset-0 dot-pattern" />
         <div className="relative z-10 text-center">
           <AnimatedSection>
             <h2 className="font-display text-4xl md:text-5xl text-white mb-6">

@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
+  ArrowUp,
   Star,
   Clock,
-  ChevronLeft,
-  ChevronRight,
   Phone,
   MapPin,
   Plus,
@@ -18,135 +17,207 @@ import {
   Shield,
   Heart,
   Award,
+  CalendarCheck,
+  Gem,
+  HandHeart,
+  Leaf,
+  Quote,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { testimonials, faqs } from "@/lib/services";
 
-/* ─── HERO ─── */
+/* ─── HERO (nurasbeauty.com style: gradient bg + floating orbs + centered) ─── */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=80"
-          alt="Luxury spa treatment"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/80 via-primary-dark/50 to-primary/20" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary to-accent" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
-        <div className="max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-accent-light text-sm tracking-widest uppercase mb-6"
-          >
+      {/* Floating orbs */}
+      <div
+        className="absolute top-[15%] left-[10%] w-72 h-72 rounded-full opacity-20 blur-3xl"
+        style={{
+          background: "radial-gradient(circle, #e8b5c5, transparent 70%)",
+          animation: "float 12s ease-in-out infinite",
+        }}
+      />
+      <div
+        className="absolute bottom-[20%] right-[8%] w-96 h-96 rounded-full opacity-15 blur-3xl"
+        style={{
+          background: "radial-gradient(circle, #d9a0ad, transparent 70%)",
+          animation: "float 15s ease-in-out infinite 3s",
+        }}
+      />
+      <div
+        className="absolute top-[50%] right-[30%] w-48 h-48 rounded-full opacity-10 blur-2xl"
+        style={{
+          background: "radial-gradient(circle, #ffffff, transparent 70%)",
+          animation: "float 10s ease-in-out infinite 6s",
+        }}
+      />
+
+      {/* Dot pattern overlay */}
+      <div className="absolute inset-0 dot-pattern opacity-30" />
+
+      {/* Content — centered */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center px-6 py-32">
+        {/* Badge pill */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 mb-8"
+        >
+          <Sparkles size={14} className="text-accent-light" />
+          <span className="text-white/90 text-sm tracking-wide">
             Luxury Facial Sculpting in Charlotte, NC
-          </motion.p>
+          </span>
+        </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.1] mb-6"
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white leading-[1.1] mb-6"
+        >
+          Where Science
+          <br />
+          Meets <span className="gradient-text italic">Beauty</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="text-white/70 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
+        >
+          Expert facial sculpting, buccal massage, facial & head massage, and
+          advanced cosmetology treatments — designed to lift, contour, and
+          reveal your natural radiance.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="flex flex-wrap justify-center gap-4 mb-16"
+        >
+          <a
+            href="https://rozamassage.glossgenius.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors inline-flex items-center gap-2 shadow-lg"
           >
-            Where Science
-            <br />
-            Meets <span className="italic text-accent-light">Beauty</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="text-white/70 text-lg leading-relaxed mb-10 max-w-lg"
+            Book Your Treatment
+            <ArrowRight size={16} />
+          </a>
+          <Link
+            href="/services"
+            className="border border-white/30 text-white px-8 py-4 rounded-full text-sm hover:bg-white/10 transition-colors backdrop-blur-sm"
           >
-            Expert facial sculpting, buccal massage, facial & head massage, and
-            advanced cosmetology treatments — designed to lift, contour, and
-            reveal your natural radiance.
-          </motion.p>
+            View Services
+          </Link>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-4"
-          >
-            <a
-              href="https://rozamassage.glossgenius.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-primary-light transition-colors inline-flex items-center gap-2"
-            >
-              Book Your Treatment
-              <ArrowRight size={16} />
-            </a>
-            <Link
-              href="/services"
-              className="border border-white/30 text-white px-8 py-4 rounded-full text-sm hover:bg-white/10 transition-colors"
-            >
-              View Services
-            </Link>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Bottom stats bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white/10 backdrop-blur-md border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {/* Stats row — centered */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.0 }}
+          className="flex flex-wrap justify-center gap-8 md:gap-14"
+        >
           {[
             { value: "500+", label: "Happy Clients" },
             { value: "5.0", label: "Star Rating" },
             { value: "25+", label: "Treatments" },
             { value: "8+", label: "Years Experience" },
           ].map((s) => (
-            <div key={s.label} className="flex items-center gap-3">
-              <span className="font-display text-xl md:text-2xl text-white">{s.value}</span>
-              <span className="text-white/50 text-xs">{s.label}</span>
+            <div key={s.label} className="text-center">
+              <p className="font-display text-3xl md:text-4xl text-white mb-1">
+                {s.value}
+              </p>
+              <p className="text-white/50 text-xs tracking-wider uppercase">
+                {s.label}
+              </p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        style={{ animation: "bounce-gentle 2s ease-in-out infinite" }}
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-1.5">
+          <div
+            className="w-1.5 h-1.5 bg-white rounded-full relative"
+            style={{ animation: "scroll-dot 1.5s ease-in-out infinite" }}
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }
 
-/* ─── SERVICES PREVIEW ─── */
+/* ─── SERVICES (nurasbeauty.com style: icon-based cards) ─── */
 const featuredServices = [
   {
     name: "TMJ Sculpt",
     price: "$180",
     duration: "90 min",
     description:
-      "Advanced facial sculpting targeting the jaw. Relieves tension while contouring and lifting facial muscles for a visibly sculpted appearance.",
+      "Advanced facial sculpting targeting the jaw. Relieves tension while contouring and lifting facial muscles.",
     badge: "Signature",
-    image:
-      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80",
+    icon: Gem,
   },
   {
     name: "Buccal Facial Massage",
     price: "$130",
     duration: "60 min",
     description:
-      "The celebrity-favourite intraoral technique that sculpts cheekbones, defines the jawline, and reduces puffiness from within.",
+      "The celebrity-favourite intraoral technique that sculpts cheekbones, defines the jawline, and reduces puffiness.",
     badge: "Most Popular",
-    image:
-      "https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=600&q=80",
+    icon: HandHeart,
+  },
+  {
+    name: "Facial Massage",
+    price: "$100",
+    duration: "60 min",
+    description:
+      "A deeply relaxing facial massage that stimulates circulation, relieves tension, and promotes a radiant glow.",
+    badge: null,
+    icon: Sparkles,
+  },
+  {
+    name: "Head Massage",
+    price: "$80",
+    duration: "45 min",
+    description:
+      "Therapeutic head massage targeting scalp, temples, and neck to relieve stress and promote deep relaxation.",
+    badge: null,
+    icon: Leaf,
+  },
+  {
+    name: "Body Contouring",
+    price: "$160",
+    duration: "120 min",
+    description:
+      "Powerful body sculpting combining cavitation, RF lifting, vacuum therapy, and vibration massage.",
+    badge: null,
+    icon: Award,
   },
   {
     name: "5-in-1 Luxury Ritual",
     price: "$290",
     duration: "150 min",
     description:
-      "Our most comprehensive experience — five expertly combined treatments for the ultimate head-to-toe transformation.",
+      "Our most comprehensive experience — five expertly combined treatments for the ultimate transformation.",
     badge: "Ultimate",
-    image:
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80",
+    icon: CalendarCheck,
   },
 ];
 
@@ -167,37 +238,27 @@ function Services() {
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredServices.map((service, i) => (
-            <AnimatedSection key={service.name} delay={i * 0.1}>
+            <AnimatedSection key={service.name} delay={i * 0.08}>
               <motion.div
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                className="group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:shadow-xl hover:border-primary-light transition-all duration-500 h-full flex flex-col">
-                {/* Image */}
-                <div className="relative h-72 overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-white text-xs px-4 py-1.5 rounded-full">
+                className="group rounded-[20px] overflow-hidden bg-white border border-gray-100 hover:shadow-xl hover:border-primary/30 transition-all duration-500 h-full flex flex-col relative"
+              >
+                {/* Gradient top bar on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {service.badge && (
+                  <div className="bg-gradient-pink text-white text-center py-2 text-xs tracking-widest uppercase font-medium">
                     {service.badge}
                   </div>
-                </div>
+                )}
 
-                {/* Content */}
                 <div className="p-7 flex-1 flex flex-col">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(5)].map((_, j) => (
-                      <Star
-                        key={j}
-                        size={12}
-                        className="fill-primary text-primary"
-                      />
-                    ))}
-                    <span className="text-gray-500 text-xs ml-1">5.0</span>
+                  {/* Icon box */}
+                  <div className="w-[60px] h-[60px] rounded-[15px] bg-gradient-pink flex items-center justify-center mb-5 shadow-md">
+                    <service.icon size={26} className="text-white" />
                   </div>
 
                   <h3 className="font-display text-2xl text-dark mb-2">
@@ -205,7 +266,7 @@ function Services() {
                   </h3>
 
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-primary font-semibold text-lg">
+                    <span className="gradient-text-pink font-semibold text-xl">
                       {service.price}
                     </span>
                     <span className="text-gray-500 text-sm flex items-center gap-1">
@@ -235,7 +296,7 @@ function Services() {
         <AnimatedSection className="text-center mt-14">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-primary text-sm font-medium border-b-2 border-primary pb-1 hover:text-primary-dark hover:border-primary-dark transition-colors"
+            className="inline-flex items-center gap-2 bg-gradient-pink text-white px-8 py-4 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
           >
             View All Services
             <ArrowRight size={16} />
@@ -255,7 +316,7 @@ function About() {
           {/* Image */}
           <AnimatedSection>
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5]">
+              <div className="relative rounded-[20px] overflow-hidden aspect-[4/5]">
                 <Image
                   src="https://images.unsplash.com/photo-1560750588-73b555deaddd?w=800&q=80"
                   alt="Roza performing facial treatment"
@@ -264,7 +325,7 @@ function About() {
                 />
               </div>
               {/* Floating card */}
-              <div className="hidden sm:block absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl max-w-[240px]">
+              <div className="hidden sm:block absolute -bottom-6 -right-6 bg-white rounded-[20px] p-6 shadow-xl max-w-[240px]">
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -291,7 +352,7 @@ function About() {
               <h2 className="font-display text-4xl md:text-5xl text-dark mb-6 leading-tight">
                 Expert Care,
                 <br />
-                <span className="italic">Visible Results</span>
+                <span className="italic gradient-text-pink">Visible Results</span>
               </h2>
               <p className="text-gray-700 leading-relaxed mb-5">
                 Roza Baidavletova is a licensed cosmetologist and the founder of
@@ -318,7 +379,9 @@ function About() {
                     key={item.text}
                     className="flex items-center gap-3 text-sm text-gray-700"
                   >
-                    <item.icon size={18} className="text-primary shrink-0" />
+                    <div className="w-9 h-9 rounded-[10px] bg-gradient-pink flex items-center justify-center shrink-0">
+                      <item.icon size={16} className="text-white" />
+                    </div>
                     {item.text}
                   </div>
                 ))}
@@ -326,7 +389,7 @@ function About() {
 
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-full text-sm hover:bg-primary-dark transition-colors"
+                className="inline-flex items-center gap-2 bg-gradient-pink text-white px-7 py-3.5 rounded-full text-sm hover:opacity-90 transition-opacity"
               >
                 Learn More
                 <ArrowRight size={16} />
@@ -369,7 +432,7 @@ function VideoShowcase() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {videos.map((video, i) => (
             <AnimatedSection key={video.id} delay={i * 0.08}>
-              <div className="relative rounded-2xl overflow-hidden bg-cream aspect-[9/16]">
+              <div className="relative rounded-[20px] overflow-hidden bg-cream aspect-[9/16] shadow-md">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.id}`}
                   title={video.title}
@@ -423,22 +486,23 @@ function WhyChoose() {
             Why Choose Us
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
-            The Roza Difference
+            The Roza <span className="gradient-text-pink italic">Difference</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
             What sets us apart in Charlotte&apos;s beauty landscape.
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((r, i) => (
             <AnimatedSection key={r.title} delay={i * 0.1}>
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                className="text-center p-8 rounded-2xl bg-white hover:shadow-lg transition-shadow duration-300 h-full">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                  <r.icon size={24} className="text-primary" />
+                className="text-center p-8 rounded-[20px] bg-white hover:shadow-xl transition-all duration-300 h-full border border-gray-100 group"
+              >
+                <div className="w-[60px] h-[60px] rounded-[15px] bg-gradient-pink flex items-center justify-center mx-auto mb-5 shadow-md group-hover:scale-110 transition-transform duration-300">
+                  <r.icon size={26} className="text-white" />
                 </div>
                 <h3 className="font-display text-xl text-dark mb-3">
                   {r.title}
@@ -478,7 +542,7 @@ function GalleryPreview() {
           </div>
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-2 text-primary text-sm font-medium border-b-2 border-primary pb-1 hover:text-primary-dark hover:border-primary-dark transition-colors"
+            className="inline-flex items-center gap-2 bg-gradient-pink text-white px-6 py-3 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
           >
             View Full Gallery
             <ArrowRight size={16} />
@@ -488,14 +552,14 @@ function GalleryPreview() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.map((src, i) => (
             <AnimatedSection key={i} delay={i * 0.1}>
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden group">
+              <div className="relative aspect-[3/4] rounded-[20px] overflow-hidden group">
                 <Image
                   src={src}
                   alt={`Treatment result ${i + 1}`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-primary-dark/0 group-hover:bg-primary-dark/30 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </AnimatedSection>
           ))}
@@ -505,111 +569,132 @@ function GalleryPreview() {
   );
 }
 
-/* ─── TESTIMONIALS ─── */
+/* ─── TESTIMONIALS (nurasbeauty.com style: grid cards, not carousel) ─── */
 function TestimonialsSection() {
-  const [current, setCurrent] = useState(0);
-  const next = useCallback(
-    () => setCurrent((c) => (c + 1) % testimonials.length),
-    []
-  );
-  const prev = () =>
-    setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
-
-  useEffect(() => {
-    const timer = setInterval(next, 5000);
-    return () => clearInterval(timer);
-  }, [next]);
-
   return (
     <section className="py-24 md:py-32 px-6 bg-cream">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-16">
           <p className="text-primary text-sm tracking-widest uppercase mb-4">
             Testimonials
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-dark">
+          <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
             What Our Clients Say
           </h2>
+          <p className="text-gray-500 max-w-xl mx-auto">
+            Join 500+ satisfied clients who trust Roza with their beauty journey.
+          </p>
         </AnimatedSection>
 
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="text-center"
-            >
-              <div className="flex items-center justify-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={18}
-                    className="fill-primary text-primary"
-                  />
-                ))}
-              </div>
-              <p className="font-display text-2xl md:text-3xl text-dark/90 leading-relaxed mb-8 italic">
-                &ldquo;{testimonials[current].text}&rdquo;
-              </p>
-              <p className="text-dark font-medium text-sm">
-                {testimonials[current].name}
-              </p>
-              <p className="text-gray-500 text-sm mt-1">
-                {testimonials[current].treatment}
-              </p>
-            </motion.div>
-          </AnimatePresence>
-
-          <div className="flex items-center justify-center gap-4 mt-10">
-            <button
-              onClick={prev}
-              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    i === current ? "bg-primary w-8" : "bg-primary/20"
-                  }`}
+        {/* Grid of cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {testimonials.map((t, i) => (
+            <AnimatedSection key={t.name} delay={i * 0.08}>
+              <div className="bg-white rounded-[20px] p-7 h-full flex flex-col border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 relative">
+                {/* Decorative quote */}
+                <Quote
+                  size={32}
+                  className="text-primary/10 absolute top-5 right-5"
                 />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              className="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-colors"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+
+                {/* Stars */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star
+                      key={j}
+                      size={14}
+                      className="fill-primary text-primary"
+                    />
+                  ))}
+                </div>
+
+                {/* Text */}
+                <p className="text-gray-700 text-sm leading-relaxed mb-6 flex-1 italic">
+                  &ldquo;{t.text}&rdquo;
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                  {/* Avatar with initials */}
+                  <div className="w-10 h-10 rounded-full bg-gradient-pink flex items-center justify-center text-white text-sm font-medium">
+                    {t.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </div>
+                  <div>
+                    <p className="text-dark text-sm font-medium">{t.name}</p>
+                    <p className="text-gray-500 text-xs">{t.treatment}</p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
+
+        {/* Review stats bar */}
+        <AnimatedSection>
+          <div className="bg-white rounded-[20px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 border border-gray-100">
+            <div className="flex items-center gap-3">
+              <span className="font-display text-4xl text-dark">5.0</span>
+              <div>
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={14}
+                      className="fill-primary text-primary"
+                    />
+                  ))}
+                </div>
+                <p className="text-gray-500 text-xs mt-0.5">Average Rating</p>
+              </div>
+            </div>
+            <div className="w-px h-10 bg-gray-200 hidden md:block" />
+            <div className="text-center">
+              <p className="font-display text-3xl text-dark">500+</p>
+              <p className="text-gray-500 text-xs">Happy Clients</p>
+            </div>
+            <div className="w-px h-10 bg-gray-200 hidden md:block" />
+            <div className="text-center">
+              <p className="font-display text-3xl text-dark">100%</p>
+              <p className="text-gray-500 text-xs">Would Recommend</p>
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
 }
 
-/* ─── CTA BANNER ─── */
+/* ─── CTA BANNER (nurasbeauty.com style: full gradient + dot pattern) ─── */
 function CTABanner() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1920&q=80"
-          alt="Spa ambiance"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary/80" />
-      </div>
+      {/* Full gradient background */}
+      <div className="absolute inset-0 bg-gradient-pink" />
+      {/* Dot pattern overlay */}
+      <div className="absolute inset-0 dot-pattern" />
+
+      {/* Floating orbs */}
+      <div
+        className="absolute top-[10%] left-[5%] w-64 h-64 rounded-full opacity-15 blur-3xl"
+        style={{
+          background: "radial-gradient(circle, #ffffff, transparent 70%)",
+          animation: "float 10s ease-in-out infinite",
+        }}
+      />
+      <div
+        className="absolute bottom-[10%] right-[10%] w-48 h-48 rounded-full opacity-10 blur-2xl"
+        style={{
+          background: "radial-gradient(circle, #e8b5c5, transparent 70%)",
+          animation: "float 12s ease-in-out infinite 4s",
+        }}
+      />
+
       <div className="relative z-10 max-w-3xl mx-auto text-center px-6">
         <AnimatedSection>
-          <h2 className="font-display text-4xl md:text-5xl text-white mb-6 leading-tight">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
             Ready for Your
             <br />
             <span className="italic">Transformation?</span>
@@ -623,14 +708,14 @@ function CTABanner() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors inline-flex items-center gap-2"
+              className="bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors inline-flex items-center gap-2 shadow-lg"
             >
               Book Appointment
               <ArrowRight size={16} />
             </a>
             <a
               href="tel:7049499962"
-              className="border border-white/30 text-white px-8 py-4 rounded-full text-sm hover:bg-white/10 transition-colors inline-flex items-center gap-2"
+              className="border border-white/30 text-white px-8 py-4 rounded-full text-sm hover:bg-white/10 transition-colors inline-flex items-center gap-2 backdrop-blur-sm"
             >
               <Phone size={16} />
               (704) 949-9962
@@ -661,7 +746,7 @@ function FAQSection() {
         <div className="flex flex-col gap-3">
           {faqs.map((faq, i) => (
             <AnimatedSection key={i} delay={i * 0.05}>
-              <div className="border border-gray-100 rounded-xl overflow-hidden hover:border-primary-light transition-colors">
+              <div className="border border-gray-100 rounded-[16px] overflow-hidden hover:border-primary/30 transition-colors">
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
                   className="w-full flex items-center justify-between p-6 text-left"
@@ -670,9 +755,9 @@ function FAQSection() {
                     {faq.question}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
                       open === i
-                        ? "bg-primary text-white"
+                        ? "bg-gradient-pink text-white rotate-0"
                         : "bg-gray-100 text-gray-500"
                     }`}
                   >
@@ -718,21 +803,27 @@ function Location() {
             </h2>
             <div className="flex flex-col gap-5 mb-8">
               <div className="flex items-start gap-4">
-                <MapPin size={20} className="text-primary mt-1 shrink-0" />
+                <div className="w-10 h-10 rounded-[10px] bg-gradient-pink flex items-center justify-center shrink-0">
+                  <MapPin size={18} className="text-white" />
+                </div>
                 <div>
                   <p className="text-dark font-medium">10614 Providence Rd, Room #10</p>
                   <p className="text-gray-500 text-sm">Charlotte, NC 28277</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Phone size={20} className="text-primary mt-1 shrink-0" />
+                <div className="w-10 h-10 rounded-[10px] bg-gradient-pink flex items-center justify-center shrink-0">
+                  <Phone size={18} className="text-white" />
+                </div>
                 <div>
                   <p className="text-dark font-medium">(704) 949-9962</p>
                   <p className="text-gray-500 text-sm">Call or text anytime</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Clock size={20} className="text-primary mt-1 shrink-0" />
+                <div className="w-10 h-10 rounded-[10px] bg-gradient-pink flex items-center justify-center shrink-0">
+                  <Clock size={18} className="text-white" />
+                </div>
                 <div>
                   <p className="text-dark font-medium">Mon–Fri 9AM–5:30PM</p>
                   <p className="text-gray-500 text-sm">Saturday 8AM–1PM</p>
@@ -743,7 +834,7 @@ function Location() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-sm hover:bg-primary-dark transition-colors"
+              className="inline-flex items-center gap-2 bg-gradient-pink text-white px-8 py-4 rounded-full text-sm hover:opacity-90 transition-opacity"
             >
               Book Your Visit
               <ArrowRight size={16} />
@@ -751,7 +842,7 @@ function Location() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.2}>
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+            <div className="relative rounded-[20px] overflow-hidden aspect-[4/3]">
               <Image
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
                 alt="Spa studio interior"
@@ -763,6 +854,49 @@ function Location() {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ─── FLOATING BUTTONS ─── */
+function FloatingButtons() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <>
+      {/* Floating Book Now button — bottom right */}
+      <a
+        href="https://rozamassage.glossgenius.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-[60px] h-[60px] rounded-full bg-gradient-pink text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform"
+        style={{ animation: "pulse-glow 2s ease-in-out infinite" }}
+        aria-label="Book Now"
+      >
+        <CalendarCheck size={24} />
+      </a>
+
+      {/* Scroll to top — bottom left */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-6 left-6 z-50 w-[48px] h-[48px] rounded-full bg-white border border-gray-200 text-primary flex items-center justify-center shadow-lg hover:bg-cream hover:scale-110 transition-all"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={20} />
+          </motion.button>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
@@ -780,6 +914,7 @@ export default function Home() {
       <CTABanner />
       <FAQSection />
       <Location />
+      <FloatingButtons />
     </main>
   );
 }
