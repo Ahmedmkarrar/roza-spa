@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #8B6F4E;
+  --color-primary-light: #A68B6B;
+  --color-primary-dark: #6B5438;
+  --color-accent: #C9A87C;
+  --color-accent-light: #DFC9A8;
+  --color-dark: #1A1A1A;
+  --color-dark-light: #2D2D2D;
+  --color-gray-900: #333333;
+  --color-gray-700: #555555;
+  --color-gray-500: #888888;
+  --color-gray-300: #CCCCCC;
+  --color-gray-100: #F5F5F5;
+  --color-cream: #FFF0F3;
+  --color-white: #FFFFFF;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-white);
+  color: var(--color-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Hide scrollbar on filter bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
