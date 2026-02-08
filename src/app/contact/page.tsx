@@ -70,16 +70,13 @@ export default function ContactPage() {
       </section>
 
       {/* Content */}
-      <section className="py-24 md:py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-5 bg-white">
+        <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact info */}
             <div>
               <AnimatedSection>
-                <p className="text-primary text-sm tracking-widest uppercase mb-4">
-                  Visit Our Studio
-                </p>
-                <h2 className="font-display text-4xl text-dark mb-8">
+                <h2 className="font-display text-[2.5rem] font-bold text-dark section-title-underline mb-10">
                   We&apos;re Here for You
                 </h2>
               </AnimatedSection>
@@ -120,30 +117,30 @@ export default function ContactPage() {
                         href={item.href}
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="flex items-start gap-4 p-5 bg-cream rounded-xl hover:shadow-md transition-all group"
+                        className="flex items-start gap-4 p-5 bg-gray-100 rounded-[12px] hover:shadow-md transition-all group"
                       >
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all">
-                          <item.icon size={20} className="text-primary group-hover:text-white" />
+                        <div className="w-[50px] h-[50px] rounded-[15px] bg-gradient-pink flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(196,120,139,0.3)] group-hover:scale-110 transition-transform">
+                          <item.icon size={22} className="text-white" />
                         </div>
                         <div>
                           <p className="text-xs text-primary tracking-widest uppercase mb-1">
                             {item.label}
                           </p>
-                          <p className="text-dark font-medium">{item.primary}</p>
-                          <p className="text-gray-500 text-sm">{item.secondary}</p>
+                          <p className="text-dark font-semibold text-[1.05rem]">{item.primary}</p>
+                          <p className="text-text-light text-[0.9rem]">{item.secondary}</p>
                         </div>
                       </a>
                     ) : (
-                      <div className="flex items-start gap-4 p-5 bg-cream rounded-xl">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                          <item.icon size={20} className="text-primary" />
+                      <div className="flex items-start gap-4 p-5 bg-gray-100 rounded-[12px]">
+                        <div className="w-[50px] h-[50px] rounded-[15px] bg-gradient-pink flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(196,120,139,0.3)]">
+                          <item.icon size={22} className="text-white" />
                         </div>
                         <div>
                           <p className="text-xs text-primary tracking-widest uppercase mb-1">
                             {item.label}
                           </p>
-                          <p className="text-dark font-medium">{item.primary}</p>
-                          <p className="text-gray-500 text-sm">{item.secondary}</p>
+                          <p className="text-dark font-semibold text-[1.05rem]">{item.primary}</p>
+                          <p className="text-text-light text-[0.9rem]">{item.secondary}</p>
                         </div>
                       </div>
                     )}
@@ -156,7 +153,7 @@ export default function ContactPage() {
                   href="https://rozamassage.glossgenius.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full text-sm hover:bg-primary-dark transition-colors w-full justify-center sm:w-auto"
+                  className="inline-flex items-center gap-2 bg-gradient-pink text-white px-10 py-4 rounded-full font-semibold hover:-translate-y-0.5 transition-all shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:shadow-[0_6px_25px_rgba(196,120,139,0.4)] w-full justify-center sm:w-auto"
                 >
                   Book Online Instantly
                   <ArrowRight size={16} />
@@ -166,11 +163,11 @@ export default function ContactPage() {
 
             {/* Form */}
             <AnimatedSection delay={0.2}>
-              <div className="bg-cream rounded-[20px] p-8 md:p-10 border border-primary/10">
-                <h3 className="font-display text-2xl text-dark mb-2">
+              <div className="bg-gray-100 rounded-[20px] p-8 md:p-10 border border-primary/10">
+                <h3 className="font-display text-[1.5rem] font-bold text-dark mb-2">
                   Send a Message
                 </h3>
-                <p className="text-gray-500 text-sm mb-8">
+                <p className="text-text-light text-[0.95rem] mb-8">
                   Questions about treatments? We&apos;ll get back to you soon.
                 </p>
 
@@ -180,20 +177,20 @@ export default function ContactPage() {
                     animate={{ scale: 1, opacity: 1 }}
                     className="text-center py-16"
                   >
-                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
+                    <div className="w-16 h-16 rounded-full bg-gradient-pink flex items-center justify-center mx-auto mb-6">
                       <Check className="text-white" size={28} />
                     </div>
-                    <h3 className="font-display text-2xl text-dark mb-2">
+                    <h3 className="font-display text-[1.5rem] font-bold text-dark mb-2">
                       Message Sent!
                     </h3>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-text-light text-[0.95rem]">
                       Thank you! We&apos;ll get back to you within 24 hours.
                     </p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div>
-                      <label className="text-xs font-medium text-gray-700 mb-2 block">
+                      <label className="text-xs font-semibold text-text-dark mb-2 block">
                         Full Name *
                       </label>
                       <input
@@ -203,14 +200,14 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                        className="w-full px-4 py-3.5 bg-white rounded-[12px] border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                         placeholder="Your name"
                       />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <label className="text-xs font-medium text-gray-700 mb-2 block">
+                        <label className="text-xs font-semibold text-text-dark mb-2 block">
                           Email *
                         </label>
                         <input
@@ -220,12 +217,12 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, email: e.target.value })
                           }
-                          className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                          className="w-full px-4 py-3.5 bg-white rounded-[12px] border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                           placeholder="you@email.com"
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-medium text-gray-700 mb-2 block">
+                        <label className="text-xs font-semibold text-text-dark mb-2 block">
                           Phone
                         </label>
                         <input
@@ -234,14 +231,14 @@ export default function ContactPage() {
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
                           }
-                          className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                          className="w-full px-4 py-3.5 bg-white rounded-[12px] border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                           placeholder="(xxx) xxx-xxxx"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="text-xs font-medium text-gray-700 mb-2 block">
+                      <label className="text-xs font-semibold text-text-dark mb-2 block">
                         Interested In
                       </label>
                       <select
@@ -249,7 +246,7 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, service: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                        className="w-full px-4 py-3.5 bg-white rounded-[12px] border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                       >
                         <option value="">Select a treatment...</option>
                         <option>TMJ Sculpt</option>
@@ -267,7 +264,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="text-xs font-medium text-gray-700 mb-2 block">
+                      <label className="text-xs font-semibold text-text-dark mb-2 block">
                         Message *
                       </label>
                       <textarea
@@ -277,14 +274,14 @@ export default function ContactPage() {
                         onChange={(e) =>
                           setFormData({ ...formData, message: e.target.value })
                         }
-                        className="w-full px-4 py-3.5 bg-white rounded-xl border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                        className="w-full px-4 py-3.5 bg-white rounded-[12px] border border-gray-200 text-dark text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
                         placeholder="Tell us about your goals..."
                       />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full bg-primary text-white py-4 rounded-full text-sm font-medium hover:bg-primary-dark transition-colors flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-pink text-white py-4 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:shadow-[0_6px_25px_rgba(196,120,139,0.4)]"
                     >
                       Send Message
                       <Send size={14} />
@@ -308,7 +305,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-primary-dark/50 flex items-center justify-center">
           <div className="text-center text-white">
             <MapPin className="w-10 h-10 mx-auto mb-4 text-primary-light" />
-            <p className="font-display text-2xl mb-2">
+            <p className="font-display text-[1.5rem] font-bold mb-2">
               10614 Providence Rd, Room #10
             </p>
             <p className="text-white/70 mb-4">Charlotte, NC 28277</p>
@@ -316,7 +313,7 @@ export default function ContactPage() {
               href="https://maps.google.com/?q=10614+Providence+Rd+Room+10+Charlotte+NC+28277"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-primary-dark px-6 py-3 rounded-full text-sm hover:bg-cream transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-6 py-3 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all shadow-lg"
             >
               Open in Google Maps
               <ArrowRight size={14} />

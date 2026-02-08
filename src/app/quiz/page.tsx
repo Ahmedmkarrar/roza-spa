@@ -169,27 +169,27 @@ export default function QuizPage() {
   // Start screen
   if (!started) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-cream px-6 pt-24">
+      <main className="min-h-screen flex items-center justify-center bg-gray-100 px-6 pt-24">
         <AnimatedSection className="max-w-xl text-center">
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
-            <Sparkles className="w-8 h-8 text-primary" />
+          <div className="w-[60px] h-[60px] rounded-[15px] bg-gradient-pink flex items-center justify-center mx-auto mb-8 shadow-[0_4px_15px_rgba(196,120,139,0.3)]">
+            <Sparkles className="w-7 h-7 text-white" />
           </div>
           <p className="text-primary text-sm tracking-widest uppercase mb-4">
             Personalized Recommendations
           </p>
-          <h1 className="font-display text-5xl md:text-6xl text-dark mb-6">
+          <h1 className="font-display text-[2.5rem] md:text-[3rem] font-bold text-dark mb-6">
             Find Your Perfect Treatment
           </h1>
-          <p className="text-gray-500 text-lg leading-relaxed mb-3">
+          <p className="text-text-light text-[1.1rem] leading-[1.8] mb-3">
             Answer 4 quick questions and we&apos;ll recommend the treatments
             perfectly matched to your goals.
           </p>
-          <p className="text-gray-500 text-sm mb-10">
+          <p className="text-text-light text-[0.9rem] mb-10">
             Takes less than 60 seconds
           </p>
           <button
             onClick={() => setStarted(true)}
-            className="inline-flex items-center gap-2 bg-primary text-white px-10 py-4 rounded-full text-sm font-medium hover:bg-primary-dark transition-colors"
+            className="inline-flex items-center gap-2 bg-gradient-pink text-white px-10 py-4 rounded-full font-semibold hover:-translate-y-0.5 transition-all shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:shadow-[0_6px_25px_rgba(196,120,139,0.4)]"
           >
             Start Quiz
             <ArrowRight size={16} />
@@ -202,68 +202,66 @@ export default function QuizPage() {
   // Results screen
   if (done) {
     return (
-      <main className="min-h-screen bg-white pt-32 pb-24 px-6">
-        <div className="max-w-4xl mx-auto">
+      <main className="min-h-screen bg-white pt-32 pb-24 px-5">
+        <div className="max-w-[1200px] mx-auto">
           <AnimatedSection className="text-center mb-14">
-            <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center mx-auto mb-6">
+            <div className="w-14 h-14 rounded-full bg-gradient-pink flex items-center justify-center mx-auto mb-6">
               <Check className="w-7 h-7 text-white" />
             </div>
-            <p className="text-primary text-sm tracking-widest uppercase mb-4">
-              Your Results
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl text-dark mb-4">
+            <h2 className="font-display text-[2.5rem] font-bold text-dark section-title-underline mb-6">
               Perfect Treatments for You
             </h2>
-            <p className="text-gray-500 max-w-md mx-auto">
+            <p className="text-text-light text-[1.1rem] max-w-[600px] mx-auto mt-6">
               Based on your answers, here are our top recommendations.
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
             {recs.map((rec, i) => (
               <AnimatedSection key={rec.name} delay={i * 0.1}>
-                <div
-                  className={`rounded-2xl overflow-hidden h-full flex flex-col bg-white border ${
-                    i === 0 ? "border-primary shadow-lg" : "border-gray-100"
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className={`group rounded-[20px] overflow-hidden h-full flex flex-col bg-white shadow-sm hover:shadow-lg transition-all duration-300 relative border-2 ${
+                    i === 0 ? "border-primary" : "border-transparent hover:border-primary"
                   }`}
                 >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-pink scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+
                   {i === 0 && (
-                    <div className="bg-primary text-white text-center py-2 text-xs tracking-widest uppercase font-medium flex items-center justify-center gap-1">
+                    <div className="absolute top-4 right-4 bg-gradient-pink text-white px-4 py-1.5 rounded-full text-[0.75rem] font-semibold uppercase z-10 flex items-center gap-1">
                       <Star size={10} className="fill-white" /> Best Match
                     </div>
                   )}
-                  <div className="p-7 flex-1 flex flex-col">
-                    <span className="text-sm bg-cream text-gray-700 px-3 py-1 rounded-full w-fit mb-4">
+
+                  <div className="p-8 flex-1 flex flex-col">
+                    <span className="text-sm bg-gray-100 text-text-dark px-3 py-1 rounded-full w-fit mb-4 font-medium">
                       {rec.match} match
                     </span>
-                    <h3 className="font-display text-2xl text-dark mb-2">
+                    <h3 className="font-display text-[1.5rem] font-bold text-dark mb-3">
                       {rec.name}
                     </h3>
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="text-primary font-semibold text-lg">
+                      <span className="gradient-text-pink font-display text-[2rem] font-extrabold">
                         {rec.price}
                       </span>
-                      <span className="text-gray-500 text-sm flex items-center gap-1">
-                        <Clock size={13} /> {rec.duration}
+                      <span className="text-text-light text-[0.9rem] flex items-center gap-1">
+                        <Clock size={14} /> {rec.duration}
                       </span>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                    <p className="text-text-light leading-[1.6] mb-6 flex-1">
                       {rec.description}
                     </p>
                     <a
                       href="https://rozamassage.glossgenius.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-full text-center py-3.5 rounded-full text-sm transition-colors ${
-                        i === 0
-                          ? "bg-primary text-white hover:bg-primary-dark"
-                          : "bg-primary text-white hover:bg-primary-dark"
-                      }`}
+                      className="w-full text-center bg-gradient-pink text-white py-3.5 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:shadow-[0_6px_25px_rgba(196,120,139,0.4)]"
                     >
                       Book Now
                     </a>
                   </div>
-                </div>
+                </motion.div>
               </AnimatedSection>
             ))}
           </div>
@@ -275,7 +273,7 @@ export default function QuizPage() {
                 setStep(0);
                 setAnswers([]);
               }}
-              className="text-gray-500 text-sm hover:text-primary transition-colors"
+              className="text-text-light text-sm hover:text-primary transition-colors"
             >
               Retake Quiz
             </button>
@@ -294,7 +292,7 @@ export default function QuizPage() {
       {/* Progress */}
       <div className="w-full h-1 bg-gray-100">
         <motion.div
-          className="h-full bg-primary"
+          className="h-full bg-gradient-pink"
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.3 }}
@@ -315,10 +313,10 @@ export default function QuizPage() {
               exit={{ opacity: 0, x: -30 }}
               transition={{ duration: 0.25 }}
             >
-              <h2 className="font-display text-3xl md:text-4xl text-dark text-center mb-2">
+              <h2 className="font-display text-[1.75rem] md:text-[2rem] font-bold text-dark text-center mb-2">
                 {current.question}
               </h2>
-              <p className="text-gray-500 text-center text-sm mb-10">
+              <p className="text-text-light text-center text-[0.95rem] mb-10">
                 {current.subtitle}
               </p>
 
@@ -329,7 +327,7 @@ export default function QuizPage() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleAnswer(opt.value)}
-                    className={`p-5 text-left rounded-xl border-2 transition-all text-sm ${
+                    className={`p-5 text-left rounded-[12px] border-2 transition-all text-sm ${
                       answers[step] === opt.value
                         ? "border-primary bg-primary/5"
                         : "border-gray-100 hover:border-primary-light bg-white"
@@ -345,7 +343,7 @@ export default function QuizPage() {
           {step > 0 && (
             <button
               onClick={() => setStep(step - 1)}
-              className="mt-8 mx-auto flex items-center gap-2 text-gray-500 text-sm hover:text-primary transition-colors"
+              className="mt-8 mx-auto flex items-center gap-2 text-text-light text-sm hover:text-primary transition-colors"
             >
               <ArrowLeft size={14} />
               Back

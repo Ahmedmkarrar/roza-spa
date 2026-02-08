@@ -6,14 +6,14 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-dark text-white">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-[1200px] mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
             <h3 className="font-display text-3xl font-medium mb-4">
               Roza<span className="text-primary">.</span>
             </h3>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
+            <p className="text-white/50 text-[0.95rem] leading-[1.8] mb-6">
               Charlotte&apos;s premier destination for luxury facial sculpting
               and advanced cosmetology treatments.
             </p>
@@ -21,7 +21,7 @@ export default function Footer() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-primary text-white text-sm px-6 py-3 rounded-full hover:bg-primary-light transition-colors"
+              className="inline-block bg-gradient-pink text-white text-sm px-6 py-3 rounded-full font-semibold shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:-translate-y-0.5 transition-all"
             >
               Book Appointment
             </a>

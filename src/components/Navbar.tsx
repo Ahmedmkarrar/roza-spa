@@ -39,7 +39,7 @@ export default function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="relative z-[60]">
           <h1
@@ -64,7 +64,7 @@ export default function Navbar() {
                     : "text-primary font-medium"
                   : isTransparent
                     ? "text-white/70 hover:text-white"
-                    : "text-gray-500 hover:text-dark"
+                    : "text-text-light hover:text-dark"
               }`}
             >
               {link.label}
@@ -74,10 +74,10 @@ export default function Navbar() {
             href="https://rozamassage.glossgenius.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-sm px-7 py-3 rounded-full transition-all duration-300 ${
+            className={`text-sm px-7 py-3 rounded-full transition-all duration-300 font-semibold ${
               isTransparent
                 ? "bg-white/15 backdrop-blur-sm text-white border border-white/25 hover:bg-white hover:text-primary-dark"
-                : "bg-primary text-white hover:bg-primary-dark"
+                : "bg-gradient-pink text-white shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:shadow-[0_6px_25px_rgba(196,120,139,0.4)] hover:-translate-y-0.5"
             }`}
           >
             Book Now
@@ -132,7 +132,7 @@ export default function Navbar() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary text-white text-sm px-10 py-4 rounded-full mt-4 hover:bg-primary-dark transition-colors"
+              className="bg-gradient-pink text-white text-sm px-10 py-4 rounded-full mt-4 font-semibold shadow-[0_4px_15px_rgba(196,120,139,0.3)]"
             >
               Book Now
             </motion.a>

@@ -58,7 +58,7 @@ export default function ServicesPage() {
 
       {/* Filter */}
       <section className="sticky top-[72px] z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 py-4">
-        <div className="max-w-7xl mx-auto px-6 flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-2 overflow-x-auto no-scrollbar">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -66,7 +66,7 @@ export default function ServicesPage() {
               className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm transition-all ${
                 activeCategory === cat
                   ? "bg-primary text-white"
-                  : "text-gray-500 hover:bg-cream"
+                  : "text-text-light hover:bg-cream"
               }`}
             >
               {cat}
@@ -76,8 +76,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-5 bg-white">
+        <div className="max-w-[1200px] mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory}
@@ -85,31 +85,38 @@ export default function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {filtered.map((service, i) => (
                 <AnimatedSection key={service.id} delay={i * 0.05}>
-                  <div className="rounded-[20px] border border-gray-100 hover:shadow-lg hover:border-primary-light transition-all duration-300 overflow-hidden h-full flex flex-col bg-white">
+                  <motion.div
+                    whileHover={{ y: -10 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    className="group rounded-[20px] overflow-hidden bg-white shadow-sm hover:shadow-lg border-2 border-transparent hover:border-primary transition-all duration-300 h-full flex flex-col relative"
+                  >
+                    {/* Top gradient bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-pink scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+
                     {service.badge && (
-                      <div className="bg-primary text-white text-center py-2 text-xs tracking-widest uppercase font-medium">
+                      <div className="absolute top-4 right-4 bg-gradient-pink text-white px-4 py-1.5 rounded-full text-[0.75rem] font-semibold uppercase z-10">
                         {service.badge}
                       </div>
                     )}
 
-                    <div className="p-7 flex-1 flex flex-col">
+                    <div className="p-8 flex-1 flex flex-col">
                       <p className="text-primary text-xs tracking-widest uppercase mb-3">
                         {service.category}
                       </p>
-                      <h3 className="font-display text-2xl text-dark mb-3">
+                      <h3 className="font-display text-[1.5rem] font-bold text-dark mb-3">
                         {service.name}
                       </h3>
 
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="text-primary font-semibold text-xl">
+                        <span className="gradient-text-pink font-display text-[2rem] font-extrabold">
                           {service.price}
                         </span>
-                        <span className="text-gray-500 text-sm flex items-center gap-1">
-                          <Clock size={13} /> {service.duration}
+                        <span className="text-text-light text-[0.9rem] flex items-center gap-1">
+                          <Clock size={14} /> {service.duration}
                         </span>
                       </div>
 
@@ -123,7 +130,7 @@ export default function ServicesPage() {
                         ))}
                       </div>
 
-                      <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+                      <p className="text-text-light leading-[1.6] mb-5 flex-1">
                         {service.description}
                       </p>
 
@@ -132,7 +139,7 @@ export default function ServicesPage() {
                         {service.benefits.map((b) => (
                           <span
                             key={b}
-                            className="inline-flex items-center gap-1 px-3 py-1 bg-cream text-gray-700 text-xs rounded-full"
+                            className="inline-flex items-center gap-1 px-3 py-1 bg-cream text-text-dark text-xs rounded-full"
                           >
                             <Check size={10} className="text-primary" /> {b}
                           </span>
@@ -143,12 +150,12 @@ export default function ServicesPage() {
                         href="https://rozamassage.glossgenius.com/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full text-center bg-primary text-white py-3.5 rounded-full text-sm hover:bg-primary-dark transition-colors mt-auto"
+                        className="w-full text-center bg-gradient-pink text-white py-3.5 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:shadow-[0_6px_25px_rgba(196,120,139,0.4)] mt-auto"
                       >
                         Book Now
                       </a>
                     </div>
-                  </div>
+                  </motion.div>
                 </AnimatedSection>
               ))}
             </motion.div>
@@ -157,26 +164,26 @@ export default function ServicesPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="py-16 md:py-24 px-6 bg-cream">
-        <div className="max-w-3xl mx-auto">
+      <section className="py-24 px-5 bg-gray-100">
+        <div className="max-w-[800px] mx-auto">
           <AnimatedSection className="text-center mb-12">
-            <p className="text-primary text-sm tracking-widest uppercase mb-4">
-              Enhance Your Visit
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl text-dark">
+            <h2 className="font-display text-[2.5rem] font-bold text-dark section-title-underline mb-6">
               Add-On Services
             </h2>
+            <p className="text-text-light text-[1.1rem] max-w-[600px] mx-auto mt-6">
+              Enhance any treatment with these extras.
+            </p>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {addOns.map((addon, i) => (
               <AnimatedSection key={addon.name} delay={i * 0.08}>
-                <div className="flex items-center justify-between p-5 bg-white rounded-xl">
+                <div className="flex items-center justify-between p-6 bg-white rounded-[12px] shadow-sm hover:shadow-md transition-all">
                   <div>
-                    <p className="text-dark font-medium">{addon.name}</p>
-                    <p className="text-gray-500 text-sm">{addon.duration}</p>
+                    <p className="text-dark font-semibold text-[1.05rem]">{addon.name}</p>
+                    <p className="text-text-light text-[0.9rem]">{addon.duration}</p>
                   </div>
-                  <span className="text-primary font-semibold text-lg">
+                  <span className="gradient-text-pink font-display text-[1.5rem] font-extrabold">
                     +{addon.price}
                   </span>
                 </div>
@@ -187,15 +194,15 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-pink" />
         <div className="absolute inset-0 dot-pattern" />
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center max-w-[800px] mx-auto px-8">
           <AnimatedSection>
-            <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
+            <h2 className="font-display text-[2.5rem] md:text-[3.5rem] font-extrabold text-white mb-6 leading-tight">
               Ready to Get Started?
             </h2>
-            <p className="text-white/70 mb-10 max-w-md mx-auto">
+            <p className="text-white/90 text-[1.25rem] leading-[1.8] mb-10 max-w-[600px] mx-auto">
               Not sure which treatment is right for you? Book a consultation and
               Roza will create a personalized plan.
             </p>
@@ -203,10 +210,10 @@ export default function ServicesPage() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-10 py-5 rounded-full text-[1.1rem] font-bold hover:-translate-y-0.5 transition-all shadow-lg"
             >
               Book Appointment
-              <ArrowRight size={16} />
+              <ArrowRight size={18} />
             </a>
           </AnimatedSection>
         </div>

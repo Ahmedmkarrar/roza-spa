@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Shield, Heart, Sparkles, Award, ArrowRight } from "lucide-react";
+import { Shield, Heart, Sparkles, Award, ArrowRight, Star } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default function AboutPage() {
@@ -39,39 +39,50 @@ export default function AboutPage() {
       </section>
 
       {/* Main about */}
-      <section className="py-24 md:py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-5 bg-white">
+        <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <div className="relative rounded-[20px] overflow-hidden aspect-[4/5]">
-                <Image
-                  src="https://images.unsplash.com/photo-1560750588-73b555deaddd?w=800&q=80"
-                  alt="Roza - Licensed Cosmetologist"
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative max-w-lg mx-auto lg:max-w-none">
+                <div className="relative rounded-[20px] overflow-hidden aspect-[3/4] shadow-lg">
+                  <Image
+                    src="https://images.unsplash.com/photo-1560750588-73b555deaddd?w=800&q=80"
+                    alt="Roza - Licensed Cosmetologist"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="hidden md:flex absolute -bottom-6 -right-6 bg-white rounded-[20px] p-6 shadow-lg max-w-[240px] flex-col gap-2 border-2 border-primary/20">
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-dark text-[0.95rem] font-medium leading-snug">
+                    &ldquo;Roza&apos;s hands are truly magical!&rdquo;
+                  </p>
+                  <p className="text-text-light text-[0.85rem]">— Jessica M.</p>
+                </div>
               </div>
             </AnimatedSection>
 
             <div>
               <AnimatedSection>
-                <p className="text-primary text-sm tracking-widest uppercase mb-4">
-                  About Roza
-                </p>
-                <h2 className="font-display text-4xl md:text-5xl text-dark mb-6 leading-tight">
+                <h2 className="font-display text-[2.5rem] font-bold text-dark mb-6 leading-tight">
                   Passion Meets
                   <br />
-                  <span className="italic">Precision</span>
+                  <span className="italic gradient-text-pink">Precision</span>
                 </h2>
               </AnimatedSection>
 
               <AnimatedSection delay={0.1}>
-                <p className="text-gray-700 leading-relaxed mb-5">
+                <p className="text-text-light text-[1rem] leading-[1.8] mb-5">
                   Roza Baidavletova is a licensed cosmetologist and the founder of
-                  Spa & Sculpting by Roza, Charlotte&apos;s premier destination
+                  Spa &amp; Sculpting by Roza, Charlotte&apos;s premier destination
                   for luxury facial sculpting and advanced cosmetology treatments.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-5">
+                <p className="text-text-light text-[1rem] leading-[1.8] mb-5">
                   With a deep passion for facial anatomy and a meticulous approach
                   to every treatment, Roza has built a reputation for delivering
                   transformative results. Her specialties include buccal facial
@@ -79,7 +90,7 @@ export default function AboutPage() {
                   advanced techniques that sculpt, lift, and relieve tension from
                   within.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-8">
+                <p className="text-text-light text-[1rem] leading-[1.8] mb-8">
                   Beyond facial sculpting, Roza offers a comprehensive range of
                   body contouring treatments using the latest technology. With
                   500+ happy clients aged 18 and older, every session is
@@ -88,7 +99,7 @@ export default function AboutPage() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.2}>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     { icon: Shield, text: "Licensed Cosmetologist" },
                     { icon: Award, text: "Buccal Massage Certified" },
@@ -97,12 +108,12 @@ export default function AboutPage() {
                   ].map((item) => (
                     <div
                       key={item.text}
-                      className="flex items-center gap-3 p-3 bg-cream rounded-[12px] text-sm text-gray-700"
+                      className="flex items-center gap-3 bg-white rounded-[12px] p-4 shadow-sm"
                     >
-                      <div className="w-9 h-9 rounded-[10px] bg-gradient-pink flex items-center justify-center shrink-0">
-                        <item.icon size={16} className="text-white" />
+                      <div className="w-[44px] h-[44px] rounded-[12px] bg-gradient-pink flex items-center justify-center shrink-0 shadow-[0_4px_15px_rgba(196,120,139,0.3)]">
+                        <item.icon size={20} className="text-white" />
                       </div>
-                      {item.text}
+                      <span className="text-text-dark font-medium text-[0.95rem]">{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -113,10 +124,10 @@ export default function AboutPage() {
       </section>
 
       {/* Quote */}
-      <section className="py-20 px-6 bg-cream">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="py-24 px-5 bg-gray-100">
+        <div className="max-w-[800px] mx-auto text-center">
           <AnimatedSection>
-            <p className="font-display text-3xl md:text-4xl text-dark italic leading-relaxed mb-6">
+            <p className="font-display text-[2rem] md:text-[2.5rem] text-dark italic leading-[1.4] mb-6">
               &ldquo;Every face is a canvas. I don&apos;t change who you are — I
               reveal the beauty that&apos;s already there.&rdquo;
             </p>
@@ -128,15 +139,15 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 md:py-32 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-5 bg-white">
+        <div className="max-w-[1200px] mx-auto">
           <AnimatedSection className="text-center mb-16">
-            <p className="text-primary text-sm tracking-widest uppercase mb-4">
-              Our Approach
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl text-dark">
+            <h2 className="font-display text-[2.5rem] font-bold text-dark section-title-underline mb-6">
               What We Believe
             </h2>
+            <p className="text-text-light text-[1.1rem] max-w-[600px] mx-auto mt-6">
+              Our approach to beauty is rooted in care, science, and natural results.
+            </p>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -164,7 +175,12 @@ export default function AboutPage() {
               },
             ].map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 0.1}>
-                <div className="rounded-[20px] overflow-hidden bg-cream h-full">
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="group rounded-[20px] overflow-hidden bg-white shadow-sm hover:shadow-lg transition-all duration-300 h-full border-2 border-transparent hover:border-primary"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-pink scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                   <div className="relative h-56">
                     <Image
                       src={v.image}
@@ -173,15 +189,15 @@ export default function AboutPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-7">
-                    <h3 className="font-display text-2xl text-dark mb-3">
+                  <div className="p-8">
+                    <h3 className="font-display text-[1.5rem] font-bold text-dark mb-3">
                       {v.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">
+                    <p className="text-text-light leading-[1.6]">
                       {v.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </AnimatedSection>
             ))}
           </div>
@@ -189,15 +205,15 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-pink" />
         <div className="absolute inset-0 dot-pattern" />
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center max-w-[800px] mx-auto px-8">
           <AnimatedSection>
-            <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
+            <h2 className="font-display text-[2.5rem] md:text-[3.5rem] font-extrabold text-white mb-6 leading-tight">
               Experience the Difference
             </h2>
-            <p className="text-white/70 mb-10 max-w-md mx-auto">
+            <p className="text-white/90 text-[1.25rem] leading-[1.8] mb-10 max-w-[600px] mx-auto">
               Book your first appointment and see why 500+ clients trust
               Roza with their skin.
             </p>
@@ -205,10 +221,10 @@ export default function AboutPage() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-10 py-5 rounded-full text-[1.1rem] font-bold hover:-translate-y-0.5 transition-all shadow-lg"
             >
               Book Your Treatment
-              <ArrowRight size={16} />
+              <ArrowRight size={18} />
             </a>
           </AnimatedSection>
         </div>

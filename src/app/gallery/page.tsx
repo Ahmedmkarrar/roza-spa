@@ -141,7 +141,7 @@ export default function GalleryPage() {
 
       {/* Filter */}
       <section className="sticky top-[72px] z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 py-4">
-        <div className="max-w-7xl mx-auto px-6 flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-2 overflow-x-auto no-scrollbar">
           {filterOptions.map((cat) => (
             <button
               key={cat}
@@ -149,7 +149,7 @@ export default function GalleryPage() {
               className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm transition-all ${
                 filter === cat
                   ? "bg-primary text-white"
-                  : "text-gray-500 hover:bg-cream"
+                  : "text-text-light hover:bg-cream"
               }`}
             >
               {cat}
@@ -159,21 +159,23 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-5 bg-white">
+        <div className="max-w-[1200px] mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={filter}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {filtered.map((item, i) => (
                 <AnimatedSection key={item.id} delay={i * 0.05}>
-                  <div
+                  <motion.div
+                    whileHover={{ y: -10 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                     onClick={() => setSelected(item)}
-                    className="group cursor-pointer rounded-[20px] overflow-hidden relative aspect-[4/5]"
+                    className="group cursor-pointer rounded-[20px] overflow-hidden relative aspect-[4/5] shadow-sm hover:shadow-lg transition-all duration-300"
                   >
                     <Image
                       src={item.image}
@@ -190,7 +192,7 @@ export default function GalleryPage() {
                         {item.treatment}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 </AnimatedSection>
               ))}
             </motion.div>
@@ -240,7 +242,7 @@ export default function GalleryPage() {
                   href="https://rozamassage.glossgenius.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full text-sm hover:bg-primary-light transition-colors"
+                  className="inline-flex items-center gap-2 bg-gradient-pink text-white px-6 py-3 rounded-full text-sm font-semibold hover:-translate-y-0.5 transition-all shadow-[0_4px_15px_rgba(196,120,139,0.3)]"
                 >
                   Book This Treatment
                   <ArrowRight size={14} />
@@ -252,15 +254,15 @@ export default function GalleryPage() {
       </AnimatePresence>
 
       {/* CTA */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-pink" />
         <div className="absolute inset-0 dot-pattern" />
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center max-w-[800px] mx-auto px-8">
           <AnimatedSection>
-            <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
+            <h2 className="font-display text-[2.5rem] md:text-[3.5rem] font-extrabold text-white mb-6 leading-tight">
               Your Transformation Awaits
             </h2>
-            <p className="text-white/70 mb-10 max-w-md mx-auto">
+            <p className="text-white/90 text-[1.25rem] leading-[1.8] mb-10 max-w-[600px] mx-auto">
               Join 500+ clients who have experienced the power of expert
               facial sculpting.
             </p>
@@ -268,10 +270,10 @@ export default function GalleryPage() {
               href="https://rozamassage.glossgenius.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-full text-sm font-medium hover:bg-cream transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-primary-dark px-10 py-5 rounded-full text-[1.1rem] font-bold hover:-translate-y-0.5 transition-all shadow-lg"
             >
               Book Now
-              <ArrowRight size={16} />
+              <ArrowRight size={18} />
             </a>
           </AnimatedSection>
         </div>
