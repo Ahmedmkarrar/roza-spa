@@ -19,16 +19,10 @@
   --font-display: 'Playfair Display', serif;
   --font-body: 'Poppins', sans-serif;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.18);
 }
 
 html {
@@ -71,11 +65,11 @@ body {
   background: linear-gradient(135deg, #8e4e62 0%, #c4788b 50%, #d4899e 100%);
 }
 
-/* ── Section title underline (matching NurasBeauty) ── */
+/* ── Section title underline ── */
 .section-title-underline {
   position: relative;
   display: inline-block;
-  padding-bottom: 0.75rem;
+  padding-bottom: 1rem;
 }
 .section-title-underline::after {
   content: '';
@@ -84,7 +78,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(135deg, #8e4e62 0%, #c4788b 50%, #d4899e 100%);
   border-radius: 2px;
 }
@@ -125,7 +119,7 @@ img { transition: opacity 0.3s ease; }
 /* ── Video card wrapper ── */
 .video-wrapper {
   position: relative;
-  padding-bottom: 177.78%; /* 9:16 aspect ratio */
+  padding-bottom: 125%; /* 4:5 aspect ratio — fits well in cards */
   height: 0;
   overflow: hidden;
 }
@@ -136,4 +130,24 @@ img { transition: opacity 0.3s ease; }
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* ── Section spacing helper ── */
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 640px) {
+  .section-pad {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
