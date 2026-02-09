@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, Star, ArrowRight, Check } from "lucide-react";
+import { Star, ArrowRight, Check } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { services, addOns, categories } from "@/lib/services";
 
@@ -42,7 +42,7 @@ export default function ServicesPage() {
             transition={{ delay: 0.1 }}
             className="font-display text-4xl sm:text-5xl md:text-7xl text-white mb-5"
           >
-            Services & Pricing
+            Our Services
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -110,15 +110,6 @@ export default function ServicesPage() {
                         {service.name}
                       </h3>
 
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="gradient-text-pink font-display text-3xl sm:text-[2rem] font-extrabold">
-                          {service.price}
-                        </span>
-                        <span className="text-text-light text-sm flex items-center gap-1">
-                          <Clock size={14} /> {service.duration}
-                        </span>
-                      </div>
-
                       <div className="flex items-center gap-1 mb-4">
                         {[...Array(5)].map((_, j) => (
                           <Star key={j} size={11} className="fill-primary text-primary" />
@@ -172,14 +163,8 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {addOns.map((addon, i) => (
               <AnimatedSection key={addon.name} delay={i * 0.08} className="h-auto">
-                <div className="flex items-center justify-between p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all">
-                  <div>
-                    <p className="text-dark font-semibold text-base">{addon.name}</p>
-                    <p className="text-text-light text-sm">{addon.duration}</p>
-                  </div>
-                  <span className="gradient-text-pink font-display text-2xl font-extrabold">
-                    +{addon.price}
-                  </span>
+                <div className="flex items-center p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all">
+                  <p className="text-dark font-semibold text-base">{addon.name}</p>
                 </div>
               </AnimatedSection>
             ))}

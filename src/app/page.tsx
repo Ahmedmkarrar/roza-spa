@@ -191,14 +191,6 @@ function Services() {
                   {/* Title */}
                   <h3 className="font-display text-xl sm:text-2xl font-bold text-dark mb-3">{service.name}</h3>
 
-                  {/* Price */}
-                  <p className="gradient-text-pink font-display text-3xl sm:text-[2rem] font-extrabold mb-1">{service.price}</p>
-
-                  {/* Duration */}
-                  <p className="text-text-light text-sm flex items-center gap-1.5 mb-4">
-                    <Clock size={14} /> {service.duration}
-                  </p>
-
                   {/* Description */}
                   <p className="text-text-light text-sm sm:text-base leading-relaxed mb-6 flex-1">{service.description}</p>
 
