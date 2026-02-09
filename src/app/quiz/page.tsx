@@ -78,7 +78,7 @@ function getRecommendations(answers: string[]): Rec[] {
   if (concern === "sagging" || concern === "fine-lines") {
     recs.push({
       name: "Facial + Buccal Massage",
-      price: "$130",
+      price: "$160",
       duration: "60 min",
       match: "96%",
       description:

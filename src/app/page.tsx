@@ -20,7 +20,6 @@ import {
   CalendarCheck,
   Gem,
   HandHeart,
-  Leaf,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { testimonials, faqs } from "@/lib/services";
@@ -143,9 +142,8 @@ function Hero() {
    ════════════════════════════════════════════ */
 const featuredServices = [
   { name: "TMJ Sculpt", price: "$180", duration: "90 min", description: "Advanced facial sculpting targeting the jaw. Relieves tension while contouring and lifting facial muscles for a sculpted look.", badge: "Signature", icon: Gem },
-  { name: "Buccal Facial Massage", price: "$130", duration: "60 min", description: "The celebrity-favourite intraoral technique that sculpts cheekbones, defines the jawline, and reduces puffiness from within.", badge: "Most Popular", icon: HandHeart },
-  { name: "Facial Massage", price: "$100", duration: "60 min", description: "A deeply relaxing facial massage that stimulates circulation, relieves tension, and promotes a radiant, youthful glow.", badge: null, icon: Sparkles },
-  { name: "Head Massage", price: "$80", duration: "45 min", description: "Therapeutic head massage targeting scalp, temples, and neck to relieve stress and promote deep relaxation.", badge: null, icon: Leaf },
+  { name: "Buccal Facial Massage", price: "$160", duration: "60 min", description: "The celebrity-favourite intraoral technique that sculpts cheekbones, defines the jawline, and reduces puffiness from within.", badge: "Most Popular", icon: HandHeart },
+  { name: "Facial Massage", price: "$110", duration: "60 min", description: "A deeply relaxing facial massage that stimulates circulation, relieves tension, and promotes a radiant, youthful glow.", badge: null, icon: Sparkles },
   { name: "Body Contouring", price: "$160", duration: "120 min", description: "Powerful body sculpting combining cavitation, RF lifting, vacuum therapy, and vibration massage for visible results.", badge: null, icon: Award },
   { name: "5-in-1 Luxury Ritual", price: "$290", duration: "150 min", description: "Our most comprehensive experience — five expertly combined treatments for the ultimate head-to-toe transformation.", badge: "Ultimate", icon: CalendarCheck },
 ];

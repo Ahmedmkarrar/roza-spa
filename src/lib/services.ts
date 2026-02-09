@@ -27,7 +27,7 @@ export const services: Service[] = [
   {
     id: "facial-buccal",
     name: "Facial + Buccal Massage",
-    price: "$130",
+    price: "$160",
     duration: "60 min",
     description:
       "Combines traditional facial techniques with intraoral buccal massage to sculpt cheekbones, define the jawline, and reduce puffiness from within.",
@@ -72,24 +72,13 @@ export const services: Service[] = [
   {
     id: "facial-massage",
     name: "Facial Massage",
-    price: "$100",
+    price: "$110",
     duration: "60 min",
     description:
       "A deeply relaxing facial massage that stimulates circulation, relieves tension, and promotes a radiant, youthful glow. Expert hands work along facial muscles and pressure points to tone, lift, and rejuvenate.",
     benefits: ["Improved circulation", "Tension relief", "Natural glow", "Muscle toning"],
     category: "Facial Sculpting",
   },
-  {
-    id: "head-massage",
-    name: "Head Massage",
-    price: "$80",
-    duration: "45 min",
-    description:
-      "A therapeutic head massage targeting the scalp, temples, and neck to relieve stress, reduce headaches, and promote deep relaxation. Perfect as a standalone treatment or an addition to any facial service.",
-    benefits: ["Stress relief", "Headache reduction", "Deep relaxation", "Scalp stimulation"],
-    category: "Facial Sculpting",
-  },
-
   // BODY SCULPTING & CONTOURING
   {
     id: "cavitation-rf",
@@ -142,17 +131,6 @@ export const services: Service[] = [
     benefits: ["Smooth legs", "Cellulite reduction", "Better circulation", "Toned appearance"],
     category: "Body Contouring",
   },
-  {
-    id: "pressotherapy",
-    name: "Pressotherapy",
-    price: "$100",
-    duration: "45 min",
-    description:
-      "A relaxing lymphatic drainage treatment using air-pressure technology to detoxify, reduce water retention, and improve circulation throughout the body.",
-    benefits: ["Full body detox", "Reduced bloating", "Better circulation", "Total relaxation"],
-    category: "Body Contouring",
-  },
-
   // FULL BODY TREATMENTS
   {
     id: "full-body-stones-60",
@@ -274,8 +252,8 @@ export const testimonials = [
   },
   {
     name: "Michelle P.",
-    treatment: "Pressotherapy",
-    text: "I was so bloated before my appointment and walked out feeling light as air. The pressotherapy is addictive! I now come every month for maintenance.",
+    treatment: "Full Body + Hot Stones",
+    text: "The hot stone treatment was absolutely incredible. I walked out feeling light as air and completely tension-free. I now come every month for maintenance.",
     rating: 5,
   },
   {
