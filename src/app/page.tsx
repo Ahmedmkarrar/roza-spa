@@ -243,7 +243,7 @@ function About() {
             <div className="relative max-w-md mx-auto lg:max-w-none">
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-lg">
                 <Image
-                  src="/roza.png"
+                  src="/roza2.jpeg"
                   alt="Roza Baidavletova - Licensed Cosmetologist"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
