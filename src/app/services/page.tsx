@@ -21,8 +21,8 @@ export default function ServicesPage() {
       <section className="relative pt-36 sm:pt-40 pb-20 sm:pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1540555700478-4be289fbec6a?w=1920&q=80"
-            alt="Spa treatment"
+            src="/facial-rf.jpg"
+            alt="Facial RF treatment at Spa & Sculpting by Roza"
             fill
             className="object-cover"
           />

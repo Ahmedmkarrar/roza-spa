@@ -419,10 +419,10 @@ function WhyChoose() {
    ════════════════════════════════════════════ */
 function GalleryPreview() {
   const images = [
-    "https://images.unsplash.com/photo-1552693673-1bf958298935?w=600&q=80",
-    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-    "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80",
+    "/facial-candles.jpg",
+    "/buccal-massage.jpg",
+    "/facial-rf-dark.jpg",
+    "/roza-portrait-dark.jpg",
   ];
 
   return (
@@ -676,8 +676,8 @@ function Location() {
           <AnimatedSection delay={0.15} className="h-auto">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
-                alt="Spa studio interior"
+                src="/roza-studio.jpg"
+                alt="Roza's studio at Spa & Sculpting by Roza"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

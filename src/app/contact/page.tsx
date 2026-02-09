@@ -17,7 +17,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="relative pt-36 sm:pt-40 pb-20 sm:pb-24">
         <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Spa interior" fill className="object-cover" />
+          <Image src="/skincare-products.jpg" alt="Spa skincare products" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/70 to-primary-dark/40" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
@@ -157,7 +157,7 @@ export default function ContactPage() {
 
       {/* Map area */}
       <section className="relative h-[350px] sm:h-[400px]">
-        <Image src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80" alt="Studio location" fill className="object-cover" />
+        <Image src="/roza-studio.jpg" alt="Roza's studio" fill className="object-cover" />
         <div className="absolute inset-0 bg-primary-dark/50 flex items-center justify-center px-6">
           <div className="text-center text-white">
             <MapPin className="w-9 h-9 sm:w-10 sm:h-10 mx-auto mb-3 text-primary-light" />

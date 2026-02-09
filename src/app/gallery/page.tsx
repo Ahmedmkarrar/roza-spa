@@ -7,18 +7,18 @@ import { X, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const galleryItems = [
-  { id: 1, treatment: "TMJ Sculpt", category: "Facial Sculpting", image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80" },
-  { id: 2, treatment: "Buccal Massage", category: "Facial Sculpting", image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80" },
-  { id: 3, treatment: "Facial Rejuvenation", category: "Facial Sculpting", image: "https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&q=80" },
-  { id: 4, treatment: "Lymphatic Drainage", category: "Facial Sculpting", image: "https://images.unsplash.com/photo-1487412912498-0447578fcca8?w=800&q=80" },
-  { id: 5, treatment: "Body Contouring", category: "Body Contouring", image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80" },
-  { id: 6, treatment: "Pressotherapy", category: "Body Contouring", image: "https://images.unsplash.com/photo-1540555700478-4be289fbec6a?w=800&q=80" },
-  { id: 7, treatment: "Cavitation + RF", category: "Body Contouring", image: "https://images.unsplash.com/photo-1560750588-73b555deaddd?w=800&q=80" },
-  { id: 8, treatment: "5-in-1 Ritual", category: "Luxury Packages", image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80" },
-  { id: 9, treatment: "Hot Stone Treatment", category: "Body Treatments", image: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" },
-  { id: 10, treatment: "Facial + Mask", category: "Facial Sculpting", image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800&q=80" },
-  { id: 11, treatment: "4-in-1 Complex", category: "Luxury Packages", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" },
-  { id: 12, treatment: "Full Body Treatment", category: "Body Treatments", image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" },
+  { id: 1, treatment: "TMJ Sculpt", category: "Facial Sculpting", image: "/buccal-massage.jpg" },
+  { id: 2, treatment: "Buccal Massage", category: "Facial Sculpting", image: "/facial-massage.jpg" },
+  { id: 3, treatment: "Facial Rejuvenation", category: "Facial Sculpting", image: "/facial-rf.jpg" },
+  { id: 4, treatment: "Facial RF Treatment", category: "Facial Sculpting", image: "/facial-rf-dark.jpg" },
+  { id: 5, treatment: "Body Contouring", category: "Body Contouring", image: "/body-cavitation.jpg" },
+  { id: 6, treatment: "Body Sculpting", category: "Body Contouring", image: "/body-contouring-device.jpg" },
+  { id: 7, treatment: "Cavitation + RF", category: "Body Contouring", image: "/body-contouring-legs.jpg" },
+  { id: 8, treatment: "5-in-1 Ritual", category: "Luxury Packages", image: "/decollete-massage.jpg" },
+  { id: 9, treatment: "Head Massage", category: "Body Treatments", image: "/head-massage.jpg" },
+  { id: 10, treatment: "Facial + Mask", category: "Facial Sculpting", image: "/facial-mask.jpg" },
+  { id: 11, treatment: "Skincare Treatment", category: "Luxury Packages", image: "/skincare-products.jpg" },
+  { id: 12, treatment: "Body Massage", category: "Body Treatments", image: "/body-massage-moody.jpg" },
 ];
 
 const filterOptions = ["All", "Facial Sculpting", "Body Contouring", "Body Treatments", "Luxury Packages"];
@@ -34,7 +34,7 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className="relative pt-36 sm:pt-40 pb-20 sm:pb-24">
         <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=1920&q=80" alt="Gallery" fill className="object-cover" />
+          <Image src="/facial-candles.jpg" alt="Treatment gallery" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-dark/70 to-primary-dark/40" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">

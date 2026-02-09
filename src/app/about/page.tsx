@@ -12,8 +12,8 @@ export default function AboutPage() {
       <section className="relative pt-36 sm:pt-40 pb-20 sm:pb-24">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1920&q=80"
-            alt="Spa ambiance"
+            src="/facial-candles.jpg"
+            alt="Facial sculpting treatment"
             fill
             className="object-cover"
           />
@@ -154,21 +154,21 @@ export default function AboutPage() {
                 description:
                   "No needles, no fillers, no downtime. We harness advanced manual techniques and the body's own ability to rejuvenate for results that look and feel natural.",
                 image:
-                  "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80",
+                  "/facial-massage.jpg",
               },
               {
                 title: "Personalized Care",
                 description:
                   "Every treatment is customized to your unique facial structure, skin concerns, and personal goals. Because true beauty isn't one-size-fits-all.",
                 image:
-                  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80",
+                  "/facial-mask.jpg",
               },
               {
                 title: "Continuous Growth",
                 description:
                   "Staying at the forefront of cosmetology means constant training, research, and mastery of the latest techniques to deliver the best possible results.",
                 image:
-                  "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80",
+                  "/treatment-machine.jpg",
               },
             ].map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 0.1}>
