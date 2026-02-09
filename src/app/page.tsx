@@ -20,6 +20,7 @@ import {
   CalendarCheck,
   Gem,
   HandHeart,
+  Leaf,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { testimonials, faqs } from "@/lib/services";
@@ -274,10 +275,12 @@ function About() {
                 for luxury facial sculpting and advanced cosmetology treatments.
               </p>
               <p className="text-text-light text-base leading-relaxed mb-8">
-                Specializing in buccal facial massage, facial massage, head
-                massage, and facial contouring, Roza combines years of expertise
-                with a deep understanding of facial anatomy to deliver
-                transformative results — naturally, without needles or fillers.
+                Specializing in buccal facial massage, facial sculpting, and
+                body contouring, Roza combines years of expertise with a deep
+                understanding of facial anatomy to deliver transformative
+                results — naturally, without needles or fillers. Every treatment
+                is enhanced with premium doTERRA essential oils for a truly
+                holistic experience.
               </p>
             </AnimatedSection>
 
@@ -286,7 +289,7 @@ function About() {
                 {[
                   { icon: Shield, text: "Licensed Cosmetologist" },
                   { icon: Award, text: "Buccal Massage Certified" },
-                  { icon: Sparkles, text: "Facial & Head Massage" },
+                  { icon: Leaf, text: "doTERRA Essential Oils" },
                   { icon: Heart, text: "Body Contouring Trained" },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3 bg-white rounded-xl p-3.5 shadow-sm">

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Shield, Heart, Sparkles, Award, ArrowRight, Star } from "lucide-react";
+import { Shield, Heart, Sparkles, Award, ArrowRight, Star, Leaf } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default function AboutPage() {
@@ -87,11 +87,16 @@ export default function AboutPage() {
                   advanced techniques that sculpt, lift, and relieve tension from
                   within.
                 </p>
-                <p className="text-text-light text-base leading-relaxed mb-8">
+                <p className="text-text-light text-base leading-relaxed mb-4">
                   Beyond facial sculpting, Roza offers a comprehensive range of
                   body contouring treatments using the latest technology. With
                   500+ happy clients aged 18 and older, every session is
                   personalized to deliver a complete wellness experience.
+                </p>
+                <p className="text-text-light text-base leading-relaxed mb-8">
+                  Every treatment is enhanced with premium doTERRA essential
+                  oils — carefully selected to calm, rejuvenate, and elevate
+                  your session into a truly holistic experience.
                 </p>
               </AnimatedSection>
 
@@ -100,7 +105,7 @@ export default function AboutPage() {
                   {[
                     { icon: Shield, text: "Licensed Cosmetologist" },
                     { icon: Award, text: "Buccal Massage Certified" },
-                    { icon: Sparkles, text: "Facial & Head Massage" },
+                    { icon: Leaf, text: "doTERRA Essential Oils" },
                     { icon: Heart, text: "Body Contouring Trained" },
                   ].map((item) => (
                     <div

@@ -10,18 +10,21 @@ const galleryItems = [
   { id: 1, treatment: "TMJ Sculpt", category: "Facial Sculpting", image: "/buccal-massage.jpg" },
   { id: 2, treatment: "Buccal Massage", category: "Facial Sculpting", image: "/facial-massage.jpg" },
   { id: 3, treatment: "Facial Rejuvenation", category: "Facial Sculpting", image: "/facial-rf.jpg" },
-  { id: 4, treatment: "Facial RF Treatment", category: "Facial Sculpting", image: "/facial-rf-dark.jpg" },
-  { id: 5, treatment: "Body Contouring", category: "Body Contouring", image: "/body-cavitation.jpg" },
-  { id: 6, treatment: "Body Sculpting", category: "Body Contouring", image: "/body-contouring-device.jpg" },
-  { id: 7, treatment: "Cavitation + RF", category: "Body Contouring", image: "/body-contouring-legs.jpg" },
-  { id: 8, treatment: "5-in-1 Ritual", category: "Luxury Packages", image: "/decollete-massage.jpg" },
-  { id: 9, treatment: "Head Massage", category: "Body Treatments", image: "/head-massage.jpg" },
-  { id: 10, treatment: "Facial + Mask", category: "Facial Sculpting", image: "/facial-mask.jpg" },
-  { id: 11, treatment: "Skincare Treatment", category: "Luxury Packages", image: "/skincare-products.jpg" },
-  { id: 12, treatment: "Body Massage", category: "Body Treatments", image: "/body-massage-moody.jpg" },
+  { id: 4, treatment: "Facial RF Treatment", category: "Facial Sculpting", image: "/facial-rf-candles.jpg" },
+  { id: 5, treatment: "Facial Sculpting — Before & After", category: "Before & After", image: "/before-after-face.jpg" },
+  { id: 6, treatment: "Body Contouring", category: "Body Contouring", image: "/body-cavitation.jpg" },
+  { id: 7, treatment: "Body Sculpting", category: "Body Contouring", image: "/body-contouring-device.jpg" },
+  { id: 8, treatment: "Cavitation + RF", category: "Body Contouring", image: "/body-contouring-legs.jpg" },
+  { id: 9, treatment: "Body Contouring — Before & After", category: "Before & After", image: "/before-after-body.jpg" },
+  { id: 10, treatment: "Green Mask Treatment", category: "Facial Sculpting", image: "/green-mask-treatment.jpg" },
+  { id: 11, treatment: "Facial + Mask", category: "Facial Sculpting", image: "/facial-mask.jpg" },
+  { id: 12, treatment: "doTERRA Essential Oils", category: "Luxury Packages", image: "/doterra-oils.jpg" },
+  { id: 13, treatment: "5-in-1 Ritual", category: "Luxury Packages", image: "/decollete-massage.jpg" },
+  { id: 14, treatment: "Skincare Products", category: "Luxury Packages", image: "/skincare-products.jpg" },
+  { id: 15, treatment: "Body Massage", category: "Body Treatments", image: "/body-massage-moody.jpg" },
 ];
 
-const filterOptions = ["All", "Facial Sculpting", "Body Contouring", "Body Treatments", "Luxury Packages"];
+const filterOptions = ["All", "Facial Sculpting", "Body Contouring", "Before & After", "Body Treatments", "Luxury Packages"];
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState("All");
