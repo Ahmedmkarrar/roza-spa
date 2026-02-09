@@ -316,6 +316,97 @@ function About() {
 }
 
 /* ════════════════════════════════════════════
+   BEFORE & AFTER
+   ════════════════════════════════════════════ */
+const beforeAfterImages = [
+  { src: "/ba-body-front.jpeg", alt: "Body contouring — front view", label: "Body Contouring" },
+  { src: "/ba-body-side.jpeg", alt: "Body contouring — side view", label: "Body Contouring" },
+  { src: "/ba-face-1.jpeg", alt: "Facial sculpting result", label: "Facial Sculpting" },
+  { src: "/ba-face-2.jpeg", alt: "Facial massage result", label: "Facial Massage" },
+  { src: "/ba-face-3.jpeg", alt: "Skin rejuvenation close-up", label: "Skin Rejuvenation" },
+];
+
+function BeforeAfter() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => setActive((p) => (p + 1) % beforeAfterImages.length), 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="section-pad bg-white">
+      <div className="max-w-[1200px] mx-auto">
+        <AnimatedSection className="text-center mb-10 md:mb-14 h-auto">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-[2.5rem] font-bold text-dark section-title-underline">
+            Before &amp; After
+          </h2>
+          <p className="text-text-light text-base sm:text-lg max-w-[600px] mx-auto mt-5">
+            Real clients, real results — see the transformations for yourself.
+          </p>
+        </AnimatedSection>
+
+        {/* Featured image */}
+        <AnimatedSection className="h-auto">
+          <div className="relative max-w-[700px] mx-auto mb-8">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.4 }}
+                className="relative w-full rounded-2xl overflow-hidden shadow-lg"
+              >
+                <Image
+                  src={beforeAfterImages[active].src}
+                  alt={beforeAfterImages[active].alt}
+                  width={700}
+                  height={700}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm px-5 py-2 rounded-full shadow-md">
+                  <span className="text-dark font-semibold text-sm">{beforeAfterImages[active].label}</span>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Thumbnails */}
+          <div className="flex justify-center gap-3 flex-wrap">
+            {beforeAfterImages.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden transition-all duration-300 ${
+                  active === i
+                    ? "ring-3 ring-primary shadow-md scale-105"
+                    : "opacity-60 hover:opacity-100"
+                }`}
+              >
+                <Image src={img.src} alt={img.alt} fill sizes="96px" className="object-cover" />
+              </button>
+            ))}
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection className="text-center mt-10 h-auto">
+          <a
+            href="https://rozamassage.glossgenius.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-gradient-pink text-white px-8 py-4 rounded-full font-semibold text-sm hover:-translate-y-0.5 transition-all shadow-[0_4px_15px_rgba(196,120,139,0.3)] hover:shadow-[0_6px_25px_rgba(196,120,139,0.4)]"
+          >
+            Book Your Transformation <ArrowRight size={16} />
+          </a>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
+/* ════════════════════════════════════════════
    VIDEOS
    ════════════════════════════════════════════ */
 const videos = [
@@ -743,6 +834,7 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
+      <BeforeAfter />
       <VideoShowcase />
       <WhyChoose />
       <GalleryPreview />
