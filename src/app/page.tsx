@@ -105,13 +105,11 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0 }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-12"
+          className="grid grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-[400px] mx-auto"
         >
           {[
             { value: "500+", label: "Happy Women" },
-            { value: "5.0", label: "Star Rating" },
             { value: "25+", label: "Treatments" },
-            { value: "8+", label: "Years Experience" },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <p className="font-display text-3xl sm:text-4xl md:text-[2.5rem] font-extrabold text-white">{s.value}</p>
