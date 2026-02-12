@@ -268,7 +268,7 @@ export const faqs = [
   {
     question: "What should I expect during my first visit?",
     answer:
-      "Your first visit begins with a brief consultation where Roza assesses your skin and discusses your goals. She'll recommend the best treatment plan for you. Our services are available for clients aged 18 and older. Please arrive 5 minutes early and avoid eating one hour before your appointment for optimal results.",
+      "Your first visit begins with a brief consultation where Roza assesses your skin and discusses your goals. She'll recommend the best treatment plan for you. Our services are exclusively for women aged 18 and older. Please arrive 5 minutes early and avoid eating one hour before your appointment for optimal results.",
   },
   {
     question: "What is buccal facial massage?",
@@ -293,7 +293,7 @@ export const faqs = [
   {
     question: "What age group are your treatments suitable for?",
     answer:
-      "Our treatments are designed for clients aged 18 and older. Whether you're looking to prevent early signs of aging or restore youthful radiance, Roza will customize each session to your skin's unique needs and goals.",
+      "Our treatments are designed exclusively for women aged 18 and older. Whether you're looking to prevent early signs of aging or restore youthful radiance, Roza will customize each session to your skin's unique needs and goals.",
   },
   {
     question: "What is your cancellation policy?",

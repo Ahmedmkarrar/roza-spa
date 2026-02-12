@@ -90,7 +90,7 @@ export default function AboutPage() {
                 <p className="text-text-light text-base leading-relaxed mb-4">
                   Beyond facial sculpting, Roza offers a comprehensive range of
                   body contouring treatments using the latest technology. With
-                  500+ happy clients aged 18 and older, every session is
+                  500+ happy women aged 18 and older, every session is
                   personalized to deliver a complete wellness experience.
                 </p>
                 <p className="text-text-light text-base leading-relaxed mb-8">
@@ -215,7 +215,7 @@ export default function AboutPage() {
               Experience the Difference
             </h2>
             <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-[600px] mx-auto">
-              Book your first appointment and see why 500+ clients trust
+              Book your first appointment and see why 500+ women trust
               Roza with their skin.
             </p>
             <a

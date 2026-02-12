@@ -113,7 +113,7 @@ export default function GalleryPage() {
         <div className="relative z-10 text-center max-w-[800px] mx-auto px-6 sm:px-8">
           <AnimatedSection className="h-auto">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">Your Transformation Awaits</h2>
-            <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-[600px] mx-auto">Join 500+ clients who have experienced the power of expert facial sculpting.</p>
+            <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-[600px] mx-auto">Join 500+ women who have experienced the power of expert facial sculpting.</p>
             <a href="https://rozamassage.glossgenius.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-bold hover:-translate-y-0.5 transition-all shadow-lg">
               Book Now <ArrowRight size={18} />
             </a>

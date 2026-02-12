@@ -108,7 +108,7 @@ function Hero() {
           className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-12"
         >
           {[
-            { value: "500+", label: "Happy Clients" },
+            { value: "500+", label: "Happy Women" },
             { value: "5.0", label: "Star Rating" },
             { value: "25+", label: "Treatments" },
             { value: "8+", label: "Years Experience" },
@@ -159,7 +159,7 @@ function Services() {
             Signature Services
           </h2>
           <p className="text-text-light text-base sm:text-lg max-w-[600px] mx-auto mt-5">
-            Each treatment is meticulously designed to deliver visible results
+            Each treatment is meticulously designed for women, delivering visible results
             through advanced cosmetology techniques.
           </p>
         </AnimatedSection>
@@ -403,7 +403,7 @@ function BeforeAfter() {
    ════════════════════════════════════════════ */
 const videos = [
   { id: "9gpBV56WNiE", title: "Facial Massage Technique", desc: "Expert sculpting in action" },
-  { id: "RTHqa73F-Hw", title: "Sculpting Session", desc: "Real client transformation" },
+  { id: "kBnjLsXfCSk", title: "Sculpting Session", desc: "Real client transformation" },
   { id: "8EtBqeHfP-E", title: "Treatment in Action", desc: "Watch the process" },
   { id: "Vpbfxaptn-s", title: "Buccal Massage", desc: "Celebrity-favourite technique" },
   { id: "-wRXPwJq6ms", title: "TMJ Treatment", desc: "Jaw relief & sculpting" },
@@ -561,7 +561,7 @@ function TestimonialsSection() {
             What Our Clients Say
           </h2>
           <p className="text-text-light text-base sm:text-lg max-w-[600px] mx-auto mt-5">
-            Join 500+ satisfied clients who trust Roza with their beauty journey.
+            Join 500+ women who trust Roza with their beauty journey.
           </p>
         </AnimatedSection>
 
@@ -608,7 +608,7 @@ function TestimonialsSection() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-8 sm:p-10 md:p-12 bg-gray-100 rounded-2xl text-center">
             {[
               { value: "5.0", label: "Average Rating" },
-              { value: "500+", label: "Happy Clients" },
+              { value: "500+", label: "Happy Women" },
               { value: "100%", label: "Would Recommend" },
             ].map((s) => (
               <div key={s.label}>
@@ -642,7 +642,7 @@ function CTABanner() {
           </h2>
           <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed mb-8 sm:mb-10 max-w-[600px] mx-auto">
             Book your appointment today and discover why Charlotte&apos;s most
-            discerning clients trust Roza with their skin.
+            discerning women trust Roza with their skin.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
